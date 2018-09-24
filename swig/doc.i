@@ -115,6 +115,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::eval_dm(const std::vector<
 DM > &arg) const  "
 
@@ -174,6 +181,10 @@ SXElem **res, casadi_int *iw, SXElem *w, void *mem) const  "
 [INTERNAL]  Evaluate with symbolic scalars.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::ProtoFunction::alloc_mem() const  "
 
@@ -270,6 +281,10 @@ elements.
 [INTERNAL]  Names of function input and outputs.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::check_res(const
 std::vector< M > &res, casadi_int &npar) const  "
@@ -474,6 +489,20 @@ size_t &sz_res, size_t &sz_iw, size_t &sz_w) const  "
 [INTERNAL]  Get number of temporary variables needed.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BackwardDiff::BackwardDiff(const std::string
 &name, casadi_int n) "
@@ -913,6 +942,12 @@ const  "
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -1334,6 +1369,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::sx_out(casadi_int ind)
 const  "
 
@@ -1534,6 +1576,20 @@ generated function.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::mx_in(casadi_int ind) const
 "
 
@@ -1706,6 +1762,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::replace_res(const
 std::vector< M > &res, casadi_int npar) const  "
 
@@ -1790,6 +1853,20 @@ const double *gamma, const double *delta, casadi_int b) const  "
 [INTERNAL]  Get the number of atomic operations.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::Blocksqp::calcBFGS(BlocksqpMemory *m, const
 double *gamma, const double *delta, casadi_int b) const  "
@@ -2008,6 +2085,10 @@ double *xk, double *f, double *g) const  "
 
 %feature("docstring")  casadi::Blocksqp::initializeFilter(BlocksqpMemory *m)
 const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
 
 [INTERNAL] ";
 
@@ -2588,6 +2669,10 @@ double cNormTrial, double dfTdeltaXi, bool swCond, casadi_int it) const  "
 
 [INTERNAL] ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::codegen_body(CodeGenerator
 &g) const  "
 
@@ -2937,6 +3022,13 @@ elements.
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -3492,6 +3584,20 @@ const  "
 [INTERNAL]  Input/output dimensions.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::nnz_out() const  "
 
@@ -4053,6 +4159,10 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::matching_arg(const
 std::vector< M > &arg, casadi_int &npar) const  "
 
@@ -4218,6 +4328,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::print_options(std::ostream
 &stream) const  "
 
@@ -4301,6 +4425,20 @@ tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::eval_gen(const double
 **arg, double **res, casadi_int *iw, double *w, void *mem) const  "
 
@@ -4362,8 +4500,22 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -4401,6 +4553,10 @@ const  "
 [INTERNAL]  Input/output dimensions.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::eval_sx(const SXElem **arg,
 SXElem **res, casadi_int *iw, SXElem *w, void *mem) const  "
@@ -5219,6 +5375,12 @@ buf_sz, const char *fmt,...) const  "
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -5797,6 +5959,12 @@ Base class for BSpline evaluators
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -6108,6 +6276,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::info() const  "
 
 [INTERNAL]  Obtain information about function
@@ -6197,6 +6369,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::sparsity_jac(casadi_int
 iind, casadi_int oind, bool compact, bool symmetric) const  "
 
@@ -6250,6 +6426,20 @@ Serialize type information.
 [INTERNAL]  Print more.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::has_spfwd() const  "
 
@@ -6411,6 +6601,20 @@ bool more) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::factory(const std::string
 &name, const std::vector< std::string > &s_in, const std::vector<
 std::string > &s_out, const Function::AuxOut &aux, const Dict &opts) const
@@ -6434,6 +6638,13 @@ casadi::FunctionInternal::codegen_declarations(CodeGenerator &g) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -6584,6 +6795,13 @@ const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -7061,6 +7279,10 @@ Propagate sparsity backwards.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::sparsity_jac(casadi_int
 iind, casadi_int oind, bool compact, bool symmetric) const  "
 
@@ -7144,6 +7366,10 @@ bool persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::call_forward(const
 std::vector< MX > &arg, const std::vector< MX > &res, const std::vector<
 std::vector< MX > > &fseed, std::vector< std::vector< MX > > &fsens, bool
@@ -7223,6 +7449,13 @@ std::string &fname) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -7748,6 +7981,12 @@ Generate a function that calculates nfwd forward derivatives.
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -7965,6 +8204,20 @@ multiplying.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::BSplineDual::has_spfwd() const  "
 
 Is the class able to propagate seeds through the algorithm?
@@ -7980,6 +8233,13 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -8025,6 +8285,20 @@ const  "
 [INTERNAL]  Save function to cache.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::print_option(const
 std::string &name, std::ostream &stream) const  "
@@ -8702,6 +8976,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring") casadi::BSplineInterpolant::~BSplineInterpolant "
 
 [INTERNAL] ";
@@ -8984,6 +9265,20 @@ symmetric, bool allow_forward, bool allow_reverse) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::disp_more(std::ostream
 &stream) const  "
 
@@ -9057,6 +9352,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 [INTERNAL]  Are all inputs and outputs scalar.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::instruction_MX(casadi_int
 k) const  "
@@ -9312,6 +9611,20 @@ elements.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::replace_aseed(const
 std::vector< std::vector< M >> &aseed, casadi_int npar) const  "
 
@@ -9355,6 +9668,10 @@ order:  Only 1 (linear) and 2 (nonlinear) allowed
 tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::eval_gen(const double
 **arg, double **res, casadi_int *iw, double *w, void *mem) const  "
@@ -9718,6 +10035,13 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -10659,6 +10983,20 @@ of a for-loop with a check-pointing instruction after each chunk of
 iterations with size base.
 
 Set base to -1 to unroll all the way; no gains in memory efficiency here.
+
+";
+
+%feature("docstring")  casadi::Function::generate_input(const std::string
+&fname, const DMDict &arg) "
+
+Export an input file that can be passed to generate C code with a main.
+
+";
+
+%feature("docstring")  casadi::Function::generate_input(const std::string
+&fname, const std::vector< DM > &arg) "
+
+Export an input file that can be passed to generate C code with a main.
 
 ";
 
@@ -11970,6 +12308,10 @@ std::string &name) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::CentralDiff::get_abstol() const  "
 
 [INTERNAL]  Get absolute tolerance.
@@ -12215,6 +12557,12 @@ std::vector< M > &res, casadi_int npar) const  "
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -12315,6 +12663,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::CentralDiff::pert(const std::string &k) const
 "
 
@@ -12391,6 +12746,13 @@ elements.
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -12535,6 +12897,20 @@ iind, casadi_int oind, bool symmetric) const  "
 [INTERNAL]  Checkout a memory object.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::which_depends(const
 std::string &s_in, const std::vector< std::string > &s_out, casadi_int
@@ -12785,6 +13161,10 @@ const std::string &fname) const  "
 [INTERNAL]  Destructor.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::alloc(const Function &f,
 bool persistent=false) "
@@ -13148,6 +13528,20 @@ const  "
 [INTERNAL]  Get function signature: name:(inputs)->(outputs)
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::alloc_res(size_t sz_res,
 bool persistent=false) "
@@ -13799,6 +14193,20 @@ tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::call_forward(const
 std::vector< MX > &arg, const std::vector< MX > &res, const std::vector<
 std::vector< MX > > &fseed, std::vector< std::vector< MX > > &fsens, bool
@@ -14012,6 +14420,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::OracleFunction::print_fstats(const
 OracleMemory *m) const  "
 
@@ -14117,6 +14532,20 @@ std::vector< M > &arg, casadi_int &npar) const  "
 [INTERNAL]  Can derivatives be calculated in any way?
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::Integrator::sp_jac_dae() "
 
@@ -14313,6 +14742,10 @@ multiplying.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::sprint(char *buf, size_t
 buf_sz, const char *fmt,...) const  "
 
@@ -14321,6 +14754,10 @@ buf_sz, const char *fmt,...) const  "
 ";
 
 %feature("docstring")  casadi::Integrator::rx() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
 
 [INTERNAL] ";
 
@@ -14895,6 +15332,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::Collocation::reset(IntegratorMemory *mem,
 double t, const double *x, const double *z, const double *p) const  "
 
@@ -14980,6 +15424,10 @@ buf_sz, const char *fmt,...) const  "
 [INTERNAL]  C-style formatted printing to string.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::has_jac() const  "
 
@@ -15225,6 +15673,20 @@ original
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::eval_sx(const SXElem **arg,
 SXElem **res, casadi_int *iw, SXElem *w, void *mem) const  "
 
@@ -15286,8 +15748,22 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -15526,6 +16002,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Conic::~Conic "
 
 [INTERNAL] ";
@@ -15714,6 +16194,20 @@ casadi::FunctionInternal::instruction_input(casadi_int k) const  "
 [INTERNAL]  Get the (integer) input arguments of an atomic operation.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::Conic::check_inputs(const double *lbx, const
 double *ubx, const double *lba, const double *uba) const  "
@@ -16339,6 +16833,12 @@ Internal class.
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -17849,6 +18349,12 @@ Internal class.
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -17914,6 +18420,10 @@ std::vector< std::vector< M >> &fseed, casadi_int npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::replace_fseed(const
 std::vector< std::vector< M > > &fseed, casadi_int npar) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
 
 [INTERNAL] ";
 
@@ -18080,6 +18590,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::alloc_mem() const  "
 
 [INTERNAL]  Create memory block.
@@ -18166,6 +18690,13 @@ multiplying.
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -18773,6 +19304,20 @@ symmetric, bool allow_forward, bool allow_reverse) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")
 casadi::FunctionInternal::getJacSparsityHierarchicalSymm(casadi_int iind,
 casadi_int oind) const  "
@@ -18791,6 +19336,13 @@ const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -18932,6 +19484,10 @@ classes.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")
 casadi::FunctionInternal::getJacSparsityGen(casadi_int iind, casadi_int
 oind, bool symmetric, casadi_int gr_i=1, casadi_int gr_o=1) const  "
@@ -19028,6 +19584,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::free_mem(void *mem) const  "
 
 [INTERNAL]  Free memory block.
@@ -19069,6 +19639,13 @@ std::vector< std::vector< M > > &aseed, casadi_int npar) const  "
 std::vector< MX > &arg) const  "
 
 [INTERNAL]  Get a vector of symbolic variables corresponding to the outputs.
+
+";
+
+%feature("docstring")  casadi::ProtoFunction::serialize(Serializer &s) const
+"
+
+[INTERNAL]  Serialize an object.
 
 ";
 
@@ -19114,6 +19691,13 @@ std::vector< M > &res, casadi_int npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -19277,6 +19861,13 @@ std::string &fname) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -19741,6 +20332,20 @@ std::vector< std::vector< M > > &fseed, casadi_int npar) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")
 casadi::FunctionInternal::instruction_constant(casadi_int k) const  "
 
@@ -19875,12 +20480,9 @@ const  "
 
 ";
 
-%feature("docstring")  casadi::ProtoFunction::serialize(Serializer &s) const
-"
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
 
-[INTERNAL]  Serialize an object.
-
-";
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::size_out(casadi_int ind)
 const  "
@@ -20107,6 +20709,12 @@ Internal class.
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -20245,6 +20853,10 @@ const  "
 [INTERNAL]  String used to identify the immediate FunctionInternal subclass.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::symbolicAdjSeed(casadi_int
 nadj, const std::vector< MatType > &v) const  "
@@ -20757,6 +21369,20 @@ elements.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::tocache(const Function &f)
 const  "
 
@@ -20968,6 +21594,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::SharedObjectInternal::weak() "
 
 [INTERNAL]  Get a weak reference to the object.
@@ -21169,6 +21802,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::sparsity_jac(casadi_int
 iind, casadi_int oind, bool compact, bool symmetric) const  "
 
@@ -21195,6 +21835,10 @@ k) const  "
 [INTERNAL]  Get an atomic operation operator index.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::call_gen(const MXVector
 &arg, MXVector &res, casadi_int npar, bool always_inline, bool never_inline)
@@ -21283,6 +21927,10 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::incache(const std::string
 &fname, Function &f) const  "
 
@@ -21348,6 +21996,20 @@ const  "
 [INTERNAL]  Reverse mode derivatives.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::mx_in(casadi_int ind) const
 "
@@ -22230,6 +22892,10 @@ bool persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::map(casadi_int n, const
 std::string &parallelization) const  "
 
@@ -22347,6 +23013,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::size_in(casadi_int ind)
 const  "
 
@@ -22440,6 +23113,20 @@ size_t &sz_res, size_t &sz_iw, size_t &sz_w) const  "
 [INTERNAL]  Get number of temporary variables needed.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::size2_out(casadi_int ind)
 const  "
@@ -22732,6 +23419,20 @@ std::string &fname)  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::self() const  "
 
 [INTERNAL]  Get a public class instance.
@@ -22976,6 +23677,10 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")
 casadi::FunctionInternal::codegen_decref(CodeGenerator &g) const  "
 
@@ -23050,6 +23755,13 @@ elements.
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -23465,6 +24177,12 @@ const  "
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -23704,6 +24422,10 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::FiniteDiff::FiniteDiff(const std::string
 &name, casadi_int n) "
 
@@ -23808,8 +24530,29 @@ double **arg, double **res, casadi_int *iw, double *w) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -24029,6 +24772,10 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::numel_in() const  "
 
 [INTERNAL]  Number of input/output elements.
@@ -24170,6 +24917,20 @@ std::string &fname, const Dict &opts) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::serialize_body(Serializer
 &s) const  "
 
@@ -24270,6 +25031,13 @@ std::string &parallelization) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -24740,6 +25508,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::has_eval_dm() const  "
 
 [INTERNAL]  Evaluate with DM matrices.
@@ -24815,6 +25590,20 @@ const  "
 ";
 
 %feature("docstring")  casadi::Integrator::t() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
 
 [INTERNAL] ";
 
@@ -25053,6 +25842,10 @@ std::string &parallelization) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::sx_out(casadi_int ind)
 const  "
 
@@ -25132,6 +25925,13 @@ k) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -25506,6 +26306,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::FixedStepIntegrator "
 
 
@@ -25800,6 +26614,10 @@ std::vector< M > &res, casadi_int &npar) const  "
 [INTERNAL]  Check if output arguments have correct length and dimensions.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::replace_arg(const
 std::vector< M > &arg, casadi_int npar) const  "
@@ -26433,6 +27251,10 @@ std::vector< std::vector< M > > &fseed, casadi_int npar) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::jac() const  "
 
 [INTERNAL]  Return Jacobian of all input elements with respect to all output
@@ -26520,6 +27342,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::sparsity_in(casadi_int ind)
 const  "
 
@@ -26554,6 +27383,10 @@ std::vector< M > &res, casadi_int npar) const  "
 [INTERNAL]  Replace 0-by-0 outputs.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::has_reverse(casadi_int
 nadj) const  "
@@ -26864,6 +27697,12 @@ std::string &parallelization) const  "
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -26966,6 +27805,20 @@ casadi::FunctionInternal::codegen_incref(CodeGenerator &g) const  "
 [INTERNAL]  Codegen incref for dependencies.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::ForwardDiff::calc_fd(double **yk, double *y0,
 double *J, double h) const  "
@@ -27243,6 +28096,20 @@ elements.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::replace_arg(const
 std::vector< M > &arg, casadi_int npar) const  "
 
@@ -27328,6 +28195,13 @@ std::string &fname, const Dict &opts) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -28715,6 +29589,20 @@ Checkout a memory object.
 
 ";
 
+%feature("docstring")  casadi::Function::generate_input(const std::string
+&fname, const DMDict &arg) "
+
+Export an input file that can be passed to generate C code with a main.
+
+";
+
+%feature("docstring")  casadi::Function::generate_input(const std::string
+&fname, const std::vector< DM > &arg) "
+
+Export an input file that can be passed to generate C code with a main.
+
+";
+
 %feature("docstring")  casadi::Function::print_option(const std::string
 &name, std::ostream &stream=casadi::uout()) const  "
 
@@ -29238,6 +30126,12 @@ member functions. Joel Andersson >List of available options
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -29877,6 +30771,10 @@ std::vector< MX > &arg) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::has_sprev() const  "
 
 [INTERNAL]  Is the class able to propagate seeds through the algorithm?
@@ -29969,6 +30867,20 @@ const  "
 [INTERNAL]  Forward mode derivatives.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::disp(std::ostream &stream,
 bool more) const  "
@@ -30418,6 +31330,10 @@ std::string &fname) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::call(const std::vector< M >
 &arg, std::vector< M > &res, bool always_inline, bool never_inline) const  "
 
@@ -30574,8 +31490,29 @@ multiplying.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -30720,6 +31657,13 @@ const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -33351,6 +34295,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::call(const std::vector< M >
 &arg, std::vector< M > &res, bool always_inline, bool never_inline) const  "
 
@@ -33609,6 +34560,13 @@ bool more) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -33888,12 +34846,30 @@ elements.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::codegen(CodeGenerator &g,
 const std::string &fname) const  "
 
 [INTERNAL]  Generate code the function.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::free_sx() const  "
 
@@ -33946,6 +34922,20 @@ const  "
 [INTERNAL]  Names of function input and outputs.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")
 casadi::FunctionInternal::getJacSparsityHierarchicalSymm(casadi_int iind,
@@ -34539,6 +35529,10 @@ std::vector< M > &res, casadi_int npar) const  "
 [INTERNAL]  Replace 0-by-0 outputs.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::OracleFunction::create_function(const
 std::string &fname, const std::vector< std::string > &s_in, const
@@ -35244,6 +36238,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::ProtoFunction::checkout() const  "
 
 [INTERNAL]  Checkout a memory object.
@@ -35433,6 +36434,20 @@ DM > &arg) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::slice(const std::string
 &name, const std::vector< casadi_int > &order_in, const std::vector<
 casadi_int > &order_out, const Dict &opts) const  "
@@ -35533,6 +36548,10 @@ std::string &fname) const  "
 
 [INTERNAL] ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::clear_mem() "
 
 [INTERNAL]  Clear all memory (called from destructor)
@@ -35618,6 +36637,10 @@ std::string &name) const  "
 
 [INTERNAL] ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::OracleFunction::finalize()  "
 
 [INTERNAL]  Finalize initialization.
@@ -35626,6 +36649,13 @@ std::string &name) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -35794,6 +36824,20 @@ const  "
 [INTERNAL]  Number of input/output nonzeros.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::wrap() const  "
 
@@ -36377,6 +37421,20 @@ std::string &fname)  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::setup(void *mem, const
 double **arg, double **res, casadi_int *iw, double *w) const  "
 
@@ -36386,6 +37444,13 @@ double **arg, double **res, casadi_int *iw, double *w) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -36589,6 +37654,20 @@ DM > &arg) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::Integrator::sp_jac_dae() "
 
 [INTERNAL]  Create sparsity pattern of the extended Jacobian (forward
@@ -36633,6 +37712,10 @@ iind, casadi_int oind, bool symmetric) const  "
 [INTERNAL]  Generate code for the function body.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::get_jacobian(const
 std::string &name, const std::vector< std::string > &inames, const
@@ -37006,6 +38089,10 @@ elements.
 [INTERNAL]  Number of function inputs and outputs.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::forward(casadi_int nfwd)
 const  "
@@ -37411,6 +38498,13 @@ propagation.
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -38048,6 +39142,20 @@ multiplying.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")
 casadi::FunctionInternal::getJacSparsityHierarchicalSymm(casadi_int iind,
 casadi_int oind) const  "
@@ -38141,6 +39249,10 @@ const  "
 [INTERNAL]  Get largest input value.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::is_a(const std::string
 &type, bool recursive) const  "
@@ -38285,6 +39397,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::sparsity_jac(casadi_int
 iind, casadi_int oind, bool compact, bool symmetric) const  "
 
@@ -38364,6 +39483,13 @@ const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -38614,6 +39740,12 @@ Internal class
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -39059,6 +40191,20 @@ std::string &fname, const Dict &opts) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::mapsum_mx(const
 std::vector< MX > &arg, const std::string &parallelization) "
 
@@ -39088,6 +40234,10 @@ const  "
 
 %feature("docstring")  casadi::PluginInterface< Interpolant
 >::plugin_name() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
 
 [INTERNAL] ";
 
@@ -39635,6 +40785,12 @@ double **res, casadi_int *iw, double *w, void *mem) const  "
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -40286,6 +41442,24 @@ bool persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::generate_lifted(Function
 &vdef_fcn, Function &vinit_fcn) const  "
 
@@ -40361,6 +41535,20 @@ k) const  "
 [INTERNAL]  Get an atomic operation operator index.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::call_forward(const
 std::vector< MX > &arg, const std::vector< MX > &res, const std::vector<
@@ -40456,12 +41644,23 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::alloc_arg(size_t sz_arg,
 bool persistent=false) "
 
 [INTERNAL]  Ensure required length of arg field.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::codegen_meta(CodeGenerator
 &g) const  "
@@ -40618,6 +41817,13 @@ std::vector< M > &res, casadi_int npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -41219,6 +42425,12 @@ A: A = L.U, with L lower and U upper triangular
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -41614,6 +42826,12 @@ A: A = Q.R, with Q orthogonal and R upper triangular
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -41849,6 +43067,13 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -42111,6 +43336,10 @@ bool persistent=false) "
 [INTERNAL]  Print list of options.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::sx_out(casadi_int ind)
 const  "
@@ -42406,6 +43635,10 @@ oind, bool symmetric, casadi_int gr_i=1, casadi_int gr_o=1) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")
 casadi::FunctionInternal::instruction_constant(casadi_int k) const  "
 
@@ -42608,6 +43841,20 @@ structure recognition for symmetric Jacobians
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::call_forward(const
 std::vector< MX > &arg, const std::vector< MX > &res, const std::vector<
 std::vector< MX > > &fseed, std::vector< std::vector< MX > > &fsens, bool
@@ -42779,6 +44026,20 @@ const  "
 [INTERNAL]  Finalize the object creation.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")
 casadi::FunctionInternal::getJacSparsityHierarchical(casadi_int iind,
@@ -43038,6 +44299,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")
 casadi::FunctionInternal::print_dimensions(std::ostream &stream) const  "
 
@@ -43123,6 +44391,10 @@ std::vector< M > &arg, casadi_int &npar) const  "
 [INTERNAL]  Check if input arguments have correct length and dimensions.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::factory(const std::string
 &name, const std::vector< std::string > &s_in, const std::vector<
@@ -43332,6 +44604,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::adjViaJac(casadi_int nadj)
 const  "
 
@@ -43426,6 +44705,10 @@ const  "
 [INTERNAL]  Input/output sparsity.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")
 casadi::FunctionInternal::instruction_input(casadi_int k) const  "
@@ -43920,6 +45203,20 @@ size_t &sz_res, size_t &sz_iw, size_t &sz_w) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::free_mx() const  "
 
 [INTERNAL]  Get free variables ( MX)
@@ -44205,6 +45502,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::alloc_arg(size_t sz_arg,
 bool persistent=false) "
 
@@ -44290,6 +45594,20 @@ const  "
 [INTERNAL]  Get largest input value.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::has_jac() const  "
 
@@ -45539,6 +46857,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::get_min_in(casadi_int ind)
 const  "
 
@@ -45858,6 +47183,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::sparsity_in(casadi_int ind)
 const  "
 
@@ -45870,6 +47202,10 @@ const  "
 [INTERNAL]  Get type name.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::ProtoFunction::checkout() const  "
 
@@ -45893,6 +47229,20 @@ std::vector< std::vector< M >> &aseed, casadi_int npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::replace_aseed(const
 std::vector< std::vector< M > > &aseed, casadi_int npar) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
 
 [INTERNAL] ";
 
@@ -45923,6 +47273,20 @@ std::string &fname, const Dict &opts) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::sz_w() const  "
 
 [INTERNAL]  Get required length of w field.
@@ -45948,6 +47312,10 @@ const  "
 [INTERNAL]  Obtain solver name from Adaptor.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::fwd_seed(casadi_int nfwd)
 const  "
@@ -49883,6 +51251,20 @@ elements.
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::get_free() const  "
 
 [INTERNAL]  Print free variables.
@@ -49994,6 +51376,10 @@ bool persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::Rootfinder::get_n_out()  "
 
 [INTERNAL]  Number of function inputs and outputs.
@@ -50071,6 +51457,13 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -50660,6 +52053,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::has_jac() const  "
 
 [INTERNAL]  Return Jacobian of all input elements with respect to all output
@@ -50757,6 +52157,10 @@ std::vector< MX > &arg, const std::string &parallelization) "
 [INTERNAL]  Get function input(s) and output(s)
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::OracleFunction::create_function(const
 std::string &fname, const std::vector< std::string > &s_in, const
@@ -51035,6 +52439,20 @@ size_t &sz_res, size_t &sz_iw, size_t &sz_w) const  "
 [INTERNAL]  Get number of temporary variables needed.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::factory(const std::string
 &name, const std::vector< std::string > &s_in, const std::vector<
@@ -51521,6 +52939,10 @@ bool persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::OracleFunction::monitored(const std::string
 &name) const  "
 
@@ -51726,6 +53148,20 @@ std::vector< std::string > &onames, const Dict &opts) const  "
 [INTERNAL]  Check if the function is of a particular type.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::get_max_in(casadi_int ind)
 const  "
@@ -51956,6 +53392,13 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -52452,6 +53895,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::Nlpsol::integer_support() const  "
 
 [INTERNAL]  Can discrete variables be treated.
@@ -52530,6 +53980,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::codegen_name(const
 CodeGenerator &g) const  "
 
@@ -52581,6 +54045,10 @@ const  "
 [INTERNAL]  Obtain solver name from Adaptor.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::get_partition(casadi_int
 iind, casadi_int oind, Sparsity &D1, Sparsity &D2, bool compact, bool
@@ -52734,6 +54202,10 @@ oind, bool symmetric, casadi_int gr_i=1, casadi_int gr_o=1) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::index_in(const std::string
 &name) const  "
 
@@ -52863,6 +54335,20 @@ tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::call_forward(const
 std::vector< MX > &arg, const std::vector< MX > &res, const std::vector<
 std::vector< MX > > &fseed, std::vector< std::vector< MX > > &fsens, bool
@@ -52890,6 +54376,13 @@ Function &f, casadi_int n) "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -52950,6 +54443,20 @@ std::string &lang, std::ostream &stream, const Dict &options) const  "
 elements.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::definition() const  "
 
@@ -53198,6 +54705,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::OmpMap::eval(const double **arg, double
 **res, casadi_int *iw, double *w, void *mem) const  "
 
@@ -53336,6 +54850,10 @@ const  "
 [INTERNAL]  Input/output dimensions.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::OmpMap::codegen_body(CodeGenerator &g) const
 "
@@ -55513,6 +57031,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::get_name_out(casadi_int i)
 "
 
@@ -55704,6 +57229,10 @@ const std::string &fname) const  "
 [INTERNAL]  Generate code the function.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::get_sparsity_in(casadi_int
 i) "
@@ -55898,6 +57427,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::ad_weight() const  "
 
 [INTERNAL]  Weighting factor for chosing forward/reverse mode.
@@ -56012,6 +57555,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::get_forward(casadi_int
 nfwd, const std::string &name, const std::vector< std::string > &inames,
 const std::vector< std::string > &onames, const Dict &opts) const  "
@@ -56021,6 +57571,10 @@ forward(nfwd) returns a cached instance if available, and calls  Function
 get_forward(casadi_int nfwd) if no cached version is available.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::jac() const  "
 
@@ -56318,6 +57872,12 @@ Joel Andersson
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -56713,6 +58273,20 @@ std::vector< M > &arg, casadi_int npar) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::OracleFunction::init_mem(void *mem) const  "
 
 [INTERNAL]  Initalize memory block.
@@ -56927,6 +58501,20 @@ bvec_t **res, casadi_int *iw, bvec_t *w, void *mem) const  "
 [INTERNAL]  Is codegen supported?
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::info() const  "
 
@@ -57559,6 +59147,20 @@ std::vector< M > &res, casadi_int &npar) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::has_spfwd() const  "
 
 [INTERNAL]  Is the class able to propagate seeds through the algorithm?
@@ -57729,6 +59331,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::has_jacobian() const  "
 
 [INTERNAL]  Return Jacobian of all input elements with respect to all output
@@ -57760,6 +59369,10 @@ elements.
 [INTERNAL]  Clear all memory (called from destructor)
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::signature(const std::string
 &fname) const  "
@@ -57852,6 +59465,13 @@ const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -58223,6 +59843,10 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::eval_dm(const std::vector<
 DM > &arg) const  "
 
@@ -58259,6 +59883,10 @@ CodeGenerator &g) const  "
 [INTERNAL]  Can derivatives be calculated in any way?
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::forward(casadi_int nfwd)
 const  "
@@ -58525,6 +60153,13 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::ProtoFunction::serialize(Serializer &s) const
+"
+
+[INTERNAL]  Serialize an object.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::sz_res() const  "
 
 [INTERNAL]  Get required length of res field.
@@ -58536,6 +60171,20 @@ const  "
 [INTERNAL]  Evaluate with DM matrices.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::has_free() const  "
 
@@ -58580,6 +60229,20 @@ const  "
 [INTERNAL]  Get smallest input value.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::size2_in(casadi_int ind)
 const  "
@@ -58717,12 +60380,9 @@ const  "
 
 ";
 
-%feature("docstring")  casadi::ProtoFunction::serialize(Serializer &s) const
-"
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
 
-[INTERNAL]  Serialize an object.
-
-";
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::jit_dependencies(const
 std::string &fname) "
@@ -58772,6 +60432,13 @@ std::string &fname) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -59346,6 +61013,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::factory(const std::string
 &name, const std::vector< std::string > &s_in, const std::vector<
 std::string > &s_out, const Function::AuxOut &aux, const Dict &opts) const
@@ -59829,6 +61503,13 @@ std::vector< std::vector< M > > &fseed, casadi_int npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -60477,6 +62158,20 @@ k) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::OracleFunction::generate_dependencies(const
 std::string &fname, const Dict &opts) const  "
 
@@ -60594,6 +62289,10 @@ double *x_opt, double *dlam) const  "
 
 [INTERNAL] ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::codegen_name(const
 CodeGenerator &g) const  "
 
@@ -60671,6 +62370,10 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::Qrsqp::solve(void *mem) const  "
 
 [INTERNAL] ";
@@ -60747,6 +62450,20 @@ const  "
 [INTERNAL]  Obtain solver name from Adaptor.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::Nlpsol::serialize_type(Serializer &s) const
 "
@@ -60950,6 +62667,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::get_partition(casadi_int
 iind, casadi_int oind, Sparsity &D1, Sparsity &D2, bool compact, bool
 symmetric, bool allow_forward, bool allow_reverse) const  "
@@ -61105,6 +62829,10 @@ casadi_int > &order_out, const Dict &opts) const  "
 original
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")
 casadi::FunctionInternal::codegen_incref(CodeGenerator &g) const  "
@@ -61594,6 +63322,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::OracleFunction::oracle() const  "
 
 [INTERNAL]  Get oracle.
@@ -61658,6 +63393,20 @@ const  "
 
 [INTERNAL] ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::Rootfinder::has_sprev() const  "
 
 [INTERNAL]  Is the class able to propagate seeds through the algorithm?
@@ -61713,6 +63462,13 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -62289,12 +64045,30 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::codegen_body(CodeGenerator
 &g) const  "
 
 [INTERNAL]  Generate code for the function body.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::eval_gen(const double
 **arg, double **res, casadi_int *iw, double *w, void *mem) const  "
@@ -62797,6 +64571,10 @@ CodeGenerator &g) const  "
 
 [INTERNAL] ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::Integrator::t() const  "
 
 [INTERNAL] ";
@@ -63034,6 +64812,13 @@ problem)
 
 ";
 
+%feature("docstring")  casadi::ProtoFunction::sprint(char *buf, size_t
+buf_sz, const char *fmt,...) const  "
+
+[INTERNAL]  C-style formatted printing to string.
+
+";
+
 %feature("docstring")  casadi::OracleFunction::print_fstats(const
 OracleMemory *m) const  "
 
@@ -63125,8 +64910,29 @@ double **arg, double **res, casadi_int *iw, double *w) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -63433,6 +65239,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::OracleFunction::set_function(const Function
 &fcn, const std::string &fname, bool jit=false) "
 
@@ -63593,12 +65406,19 @@ const  "
 
 ";
 
-%feature("docstring")  casadi::ProtoFunction::sprint(char *buf, size_t
-buf_sz, const char *fmt,...) const  "
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
 
-[INTERNAL]  C-style formatted printing to string.
+[INTERNAL] ";
 
-";
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::replace_fseed(const
 std::vector< std::vector< M >> &fseed, casadi_int npar) const  "
@@ -63814,6 +65634,10 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::RungeKutta::plugin_name() const  "
 
 [INTERNAL] ";
@@ -64023,6 +65847,13 @@ std::vector< std::vector< M > > &fseed, casadi_int npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -64397,6 +66228,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::alloc(const Function &f,
 bool persistent=false) "
 
@@ -64636,6 +66474,20 @@ const  "
 
 [INTERNAL] ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::check_arg(const
 std::vector< M > &arg, casadi_int &npar) const  "
 
@@ -64648,6 +66500,10 @@ std::vector< M > &arg, casadi_int &npar) const  "
 [INTERNAL]  Checkout a memory object.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::Nlpsol::get_default_in(casadi_int ind) const
 "
@@ -65010,6 +66866,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::sp_forward(const bvec_t
 **arg, bvec_t **res, casadi_int *iw, bvec_t *w, void *mem) const  "
 
@@ -65075,6 +66945,10 @@ k) const  "
 [INTERNAL]  get MX expression associated with instruction
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::Scpgen::get_stats(void *mem) const  "
 
@@ -66317,6 +68191,20 @@ casadi::FunctionInternal::instruction_output(casadi_int k) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::fwd_seed(casadi_int nfwd)
 const  "
 
@@ -66710,6 +68598,10 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::checkout() const  "
 
 [INTERNAL]  Checkout a memory object.
@@ -66875,6 +68767,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::SlicotDple::class_name() const  "
 
 [INTERNAL]  Readable name of the internal class.
@@ -66958,6 +68864,10 @@ CodeGenerator &g) const  "
 [INTERNAL]  Options.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::nnz_out() const  "
 
@@ -67164,6 +69074,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::get_default_in(casadi_int
 ind) const  "
 
@@ -67315,6 +69232,13 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -67883,6 +69807,20 @@ Joris Gillis
 
 C++ includes: slicot_expm.hpp ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::size1_in(casadi_int ind)
 const  "
 
@@ -68162,6 +70100,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::Expm::get_n_in()  "
 
 [INTERNAL]  Number of function inputs and outputs.
@@ -68382,6 +70327,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::replace_fseed(const
 std::vector< std::vector< M >> &fseed, casadi_int npar) const  "
 
@@ -68528,6 +70480,10 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::construct(const Dict &opts) "
 
 [INTERNAL]  Construct Prepares the function for evaluation.
@@ -68593,6 +70549,10 @@ std::string &fname) "
 [INTERNAL]  Jit dependencies.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::size1_out(casadi_int ind)
 const  "
@@ -68703,6 +70663,20 @@ order:  Only 1 (linear) and 2 (nonlinear) allowed
 tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::set_temp(void *mem, const
 double **arg, double **res, casadi_int *iw, double *w) const  "
@@ -68958,6 +70932,12 @@ Andersson
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -69460,6 +71440,10 @@ std::vector< M > &arg, casadi_int &npar) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::Smoothing::has_err() const  "
 
 [INTERNAL] ";
@@ -69642,6 +71626,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring") casadi::Smoothing::Smoothing(const std::string &name,
 casadi_int n) "
 
@@ -69761,6 +71752,20 @@ casadi::FunctionInternal::print_dimensions(std::ostream &stream) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::construct(const Dict &opts) "
 
 [INTERNAL]  Construct Prepares the function for evaluation.
@@ -69785,6 +71790,20 @@ iind, casadi_int oind, bool symmetric) const  "
 [INTERNAL]  Get function signature: name:(inputs)->(outputs)
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::n_instructions() const  "
 
@@ -70048,6 +72067,10 @@ std::string &fname, const Dict &opts) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::has_reverse(casadi_int
 nadj) const  "
 
@@ -70215,6 +72238,13 @@ bool persistent=false) "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -71559,6 +73589,10 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::release(casadi_int mem) const
 "
 
@@ -71571,6 +73605,13 @@ const  "
 [INTERNAL]  Get a public class instance.
 
 ";
+
+%feature("docstring")  casadi::Sqpmethod::codegen_qp_solve(CodeGenerator
+&cg, const std::string &H, const std::string &g, const std::string &lbdz,
+const std::string &ubdz, const std::string &A, const std::string &x_opt,
+const std::string &dlam) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::OracleFunction::set_temp(void *mem, const
 double **arg, double **res, casadi_int *iw, double *w) const  "
@@ -71591,13 +73632,6 @@ casadi::FunctionInternal::getJacSparsityGen(casadi_int iind, casadi_int
 oind, bool symmetric, casadi_int gr_i=1, casadi_int gr_o=1) const  "
 
 [INTERNAL]  Get the sparsity pattern, forward mode.
-
-";
-
-%feature("docstring")  casadi::FunctionInternal::codegen_body(CodeGenerator
-&g) const  "
-
-[INTERNAL]  Generate code for the function body.
 
 ";
 
@@ -71794,6 +73828,13 @@ bool persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::incache(const std::string
+&fname, Function &f) const  "
+
+[INTERNAL]  Get function in cache.
+
+";
+
 %feature("docstring")  casadi::Nlpsol::get_reverse(casadi_int nadj, const
 std::string &name, const std::vector< std::string > &inames, const
 std::vector< std::string > &onames, const Dict &opts) const  "
@@ -71934,17 +73975,9 @@ std::vector< MX > &arg, const std::string &parallelization) "
 
 ";
 
-%feature("docstring")  casadi::Sqpmethod::print_iteration() const  "
+%feature("docstring")  casadi::Nlpsol::init_mem(void *mem) const  "
 
-[INTERNAL]  Print iteration header.
-
-";
-
-%feature("docstring")  casadi::Sqpmethod::print_iteration(casadi_int iter,
-double obj, double pr_inf, double du_inf, double dx_norm, double reg,
-casadi_int ls_trials, bool ls_success) const  "
-
-[INTERNAL]  Print iteration.
+[INTERNAL]  Initalize memory block.
 
 ";
 
@@ -72019,6 +74052,13 @@ casadi::FunctionInternal::instruction_output(casadi_int k) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -72237,10 +74277,10 @@ casadi::FunctionInternal::codegen_sparsities(CodeGenerator &g) const  "
 
 ";
 
-%feature("docstring")  casadi::FunctionInternal::incache(const std::string
-&fname, Function &f) const  "
+%feature("docstring")  casadi::Sqpmethod::codegen_body(CodeGenerator &g)
+const  "
 
-[INTERNAL]  Get function in cache.
+[INTERNAL]  Generate code for the function body.
 
 ";
 
@@ -72289,8 +74329,8 @@ k) const  "
 
 ";
 
-%feature("docstring")
-casadi::FunctionInternal::codegen_declarations(CodeGenerator &g) const  "
+%feature("docstring")  casadi::Sqpmethod::codegen_declarations(CodeGenerator
+&g) const  "
 
 [INTERNAL]  Generate code for the declarations of the C function.
 
@@ -72549,6 +74589,10 @@ iind, casadi_int oind, bool symmetric) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::replace_aseed(const
 std::vector< std::vector< M >> &aseed, casadi_int npar) const  "
 
@@ -72610,6 +74654,13 @@ bool persistent=false) "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -72733,9 +74784,17 @@ std::string &name, std::ostream &stream) const  "
 
 ";
 
-%feature("docstring")  casadi::Nlpsol::init_mem(void *mem) const  "
+%feature("docstring")  casadi::Sqpmethod::print_iteration() const  "
 
-[INTERNAL]  Initalize memory block.
+[INTERNAL]  Print iteration header.
+
+";
+
+%feature("docstring")  casadi::Sqpmethod::print_iteration(casadi_int iter,
+double obj, double pr_inf, double du_inf, double dx_norm, double reg,
+casadi_int ls_trials, bool ls_success) const  "
+
+[INTERNAL]  Print iteration.
 
 ";
 
@@ -72807,6 +74866,20 @@ const  "
 [INTERNAL]  Code generate the function.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::OracleFunction::calc_function(OracleMemory
 *m, const std::string &fcn, const double *const *arg=nullptr) const  "
@@ -72993,6 +75066,20 @@ std::vector< M > &arg, casadi_int &npar) const  "
 elements.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::get_partition(casadi_int
 iind, casadi_int oind, Sparsity &D1, Sparsity &D2, bool compact, bool
@@ -73203,6 +75290,13 @@ const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_iw(size_t sz_iw, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of iw field.
 
@@ -73548,6 +75642,20 @@ size_t &sz_res, size_t &sz_iw, size_t &sz_w) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::size_out(casadi_int ind)
 const  "
 
@@ -73753,6 +75861,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::factory(const std::string
 &name, const std::vector< std::string > &s_in, const std::vector<
 std::string > &s_out, const Function::AuxOut &aux, const Dict &opts) const
@@ -73841,6 +75956,10 @@ std::string &lang, std::ostream &stream, const Dict &options) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::sx_out(casadi_int ind)
 const  "
 
@@ -73859,6 +75978,10 @@ const  "
 [INTERNAL]  Options.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::disp(std::ostream &stream,
 bool more) const  "
@@ -74104,6 +76227,20 @@ always_inline, bool never_inline) const  "
 [INTERNAL]  Create memory block.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")
 casadi::FunctionInternal::getJacSparsityHierarchical(casadi_int iind,
@@ -74598,6 +76735,12 @@ Joel Andersson
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -75566,6 +77709,13 @@ persistent=false) "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::alloc_iw(const std::string
+&name, size_t sz_iw, bool persistent=false) "
+
+[INTERNAL]  Ensure required length of iw field.
+
+";
+
 %feature("docstring")  casadi::FunctionInternal::get_stats(void *mem) const
 "
 
@@ -75612,6 +77762,13 @@ ind) const  "
 
 %feature("docstring")  casadi::FunctionInternal::alloc_w(size_t sz_w, bool
 persistent=false) "
+
+[INTERNAL]  Ensure required length of w field.
+
+";
+
+%feature("docstring")  casadi::FunctionInternal::alloc_w(const std::string
+&name, size_t sz_w, bool persistent=false) "
 
 [INTERNAL]  Ensure required length of w field.
 
@@ -75679,6 +77836,10 @@ const  "
 [INTERNAL]  Get function signature: name:(inputs)->(outputs)
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offsets() const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::getJacSparsity(casadi_int
 iind, casadi_int oind, bool symmetric) const  "
@@ -75912,6 +78073,20 @@ const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::iw_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::iw_offset(casadi_int *&iw,
+const std::string &name) const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::ProtoFunction::clear_mem() "
 
 [INTERNAL]  Clear all memory (called from destructor)
@@ -75984,6 +78159,10 @@ size_t &sz_res, size_t &sz_iw, size_t &sz_w) const  "
 
 ";
 
+%feature("docstring")  casadi::FunctionInternal::w_offsets() const  "
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::FunctionInternal::alloc_res(size_t sz_res,
 bool persistent=false) "
 
@@ -75997,6 +78176,20 @@ std::string &name, std::ostream &stream) const  "
 [INTERNAL]  Print all information there is to know about a certain option.
 
 ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(const std::string
+&name) const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset() const  "
+
+[INTERNAL] ";
+
+%feature("docstring")  casadi::FunctionInternal::w_offset(double *&w, const
+std::string &name) const  "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::FunctionInternal::symbolic_output(const
 std::vector< MX > &arg) const  "
@@ -76502,6 +78695,12 @@ General information
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -76585,6 +78784,11 @@ T1 *w, casadi_int tr) "
 Get the number of integrator outputs.
 
 ";
+
+%feature("docstring")  casadi::casadi_mmax(const T1 *x, casadi_int n, T1
+is_dense) "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::casadi_mmax(const T1 *x, casadi_int n,
 casadi_int is_dense) "
@@ -77178,6 +79382,11 @@ Check if the vector has negative entries.
 
 ";
 
+%feature("docstring")  casadi::casadi_vfmin(const T1 *x, casadi_int n, T1 r)
+"
+
+[INTERNAL] ";
+
 %feature("docstring")  casadi::to_slice(const IM &x, bool ind1=false) "
 
 Convert IM to Slice.
@@ -77206,6 +79415,11 @@ casadi_int *sign, casadi_int skip) "
 Get the documentation string for a plugin.
 
 ";
+
+%feature("docstring")  casadi::getcopy(const A &a, std::map<
+SharedObjectInternal *, SharedObject > &already_copied) "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::expm_n_in() "
 
@@ -77292,6 +79506,11 @@ Number of rootfinder inputs.
 Check if a particular plugin is available.
 
 ";
+
+%feature("docstring")  casadi::casadi_bound_consistency(casadi_int n, T1 *x,
+T1 *lam, const T1 *lbx, const T1 *ubx) "
+
+[INTERNAL] ";
 
 %feature("docstring")  casadi::casadi_central_diff(T1 **yk, T1 *y0, T1 *J,
 T1 h, casadi_int n_y, const casadi_finite_diff_mem< T1 > *m) "
@@ -78065,6 +80284,12 @@ General information
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -78800,8 +81025,8 @@ Checks if array does not contain NaN or Inf.
 
 [INTERNAL] ";
 
-%feature("docstring")  casadi::getcopy(const A &a, std::map<
-SharedObjectInternal *, SharedObject > &already_copied) "
+%feature("docstring")  casadi::casadi_vfmax(const T1 *x, casadi_int n, T1 r)
+"
 
 [INTERNAL] ";
 
@@ -79246,6 +81471,12 @@ General information
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -79628,6 +81859,12 @@ General information
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |

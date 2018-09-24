@@ -147,6 +147,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 ";
 
+%feature("docstring") casadi::BackwardDiff::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BackwardDiff::alloc_mem "
 
 [INTERNAL]  Create memory block.
@@ -233,6 +237,10 @@ elements.
 [INTERNAL]  Names of function input and outputs.
 
 ";
+
+%feature("docstring") casadi::BackwardDiff::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BackwardDiff::check_res "
 
@@ -408,6 +416,10 @@ elements.
 [INTERNAL]  Get number of temporary variables needed.
 
 ";
+
+%feature("docstring") casadi::BackwardDiff::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BackwardDiff::BackwardDiff "
 
@@ -803,6 +815,12 @@ elements.
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -1315,6 +1333,10 @@ generated function.
 
 ";
 
+%feature("docstring") casadi::BackwardDiff::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BackwardDiff::mx_in "
 
 [INTERNAL]  Get function input(s) and output(s)
@@ -1530,6 +1552,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::Blocksqp::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Blocksqp::calcBFGS "
 
 [INTERNAL] ";
@@ -1696,6 +1722,10 @@ Evaluate exact hessian of Lagrangian.
 ";
 
 %feature("docstring") casadi::Blocksqp::initializeFilter "
+
+[INTERNAL] ";
+
+%feature("docstring") casadi::Blocksqp::w_offsets "
 
 [INTERNAL] ";
 
@@ -2258,6 +2288,10 @@ C++ includes: blocksqp.hpp ";
 [INTERNAL] ";
 
 %feature("docstring") casadi::Blocksqp::kktErrorReduction "
+
+[INTERNAL] ";
+
+%feature("docstring") casadi::Blocksqp::iw_offsets "
 
 [INTERNAL] ";
 
@@ -3008,6 +3042,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Blocksqp::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Blocksqp::nnz_out "
 
 [INTERNAL]  Number of input/output nonzeros.
@@ -3510,6 +3548,10 @@ Options.
 
 ";
 
+%feature("docstring") casadi::BSpline::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BSpline::matching_arg "
 
 [INTERNAL]  Check if input arguments that needs to be replaced.
@@ -3641,6 +3683,10 @@ Readable name of the internal class.
 
 ";
 
+%feature("docstring") casadi::BSpline::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BSpline::print_options "
 
 [INTERNAL]  Print list of options.
@@ -3706,6 +3752,10 @@ tr:  Flip the relationship. Return which expressions contain the variables
 [INTERNAL]  Are all inputs and outputs scalar.
 
 ";
+
+%feature("docstring") casadi::BSpline::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BSpline::eval_gen "
 
@@ -3787,6 +3837,10 @@ Sparsities of function inputs and outputs.
 [INTERNAL]  Input/output dimensions.
 
 ";
+
+%feature("docstring") casadi::BSpline::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BSpline::eval_sx "
 
@@ -4497,6 +4551,12 @@ structure recognition.
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -5034,6 +5094,12 @@ Base class for BSpline evaluators
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -5310,6 +5376,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 
 ";
 
+%feature("docstring") casadi::BSplineCommon::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BSplineCommon::info "
 
 [INTERNAL]  Obtain information about function
@@ -5373,6 +5443,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 ";
 
+%feature("docstring") casadi::BSplineCommon::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BSplineCommon::sparsity_jac "
 
 [INTERNAL]  Get, if necessary generate, the sparsity of a Jacobian block.
@@ -5420,6 +5494,10 @@ Serialize type information.
 [INTERNAL]  Print more.
 
 ";
+
+%feature("docstring") casadi::BSplineCommon::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BSplineCommon::has_spfwd "
 
@@ -5553,6 +5631,10 @@ Number of function inputs and outputs.
 [INTERNAL]  Display object.
 
 ";
+
+%feature("docstring") casadi::BSplineCommon::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BSplineCommon::factory "
 
@@ -6082,6 +6164,10 @@ Propagate sparsity backwards.
 
 ";
 
+%feature("docstring") casadi::BSplineDual::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BSplineDual::sparsity_jac "
 
 [INTERNAL]  Get, if necessary generate, the sparsity of a Jacobian block.
@@ -6155,6 +6241,10 @@ structure recognition for symmetric Jacobians
 [INTERNAL]  Ensure work vectors long enough to evaluate function.
 
 ";
+
+%feature("docstring") casadi::BSplineDual::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BSplineDual::call_forward "
 
@@ -6675,6 +6765,12 @@ Generate a function that calculates nfwd forward derivatives.
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -6871,6 +6967,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::BSplineDual::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BSplineDual::has_spfwd "
 
 Is the class able to propagate seeds through the algorithm?
@@ -6924,6 +7024,10 @@ Generate a function that calculates nadj adjoint derivatives.
 [INTERNAL]  Save function to cache.
 
 ";
+
+%feature("docstring") casadi::BSplineDual::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BSplineDual::print_option "
 
@@ -7753,6 +7857,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::BSplineInterpolant::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BSplineInterpolant::disp_more "
 
 [INTERNAL]  Print more.
@@ -7814,6 +7922,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 [INTERNAL]  Are all inputs and outputs scalar.
 
 ";
+
+%feature("docstring") casadi::BSplineInterpolant::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BSplineInterpolant::instruction_MX "
 
@@ -8018,6 +8130,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::BSplineInterpolant::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::BSplineInterpolant::replace_aseed "
 
 [INTERNAL]
@@ -8057,6 +8173,10 @@ order:  Only 1 (linear) and 2 (nonlinear) allowed
 tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
+
+%feature("docstring") casadi::BSplineInterpolant::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::BSplineInterpolant::eval_gen "
 
@@ -8920,6 +9040,12 @@ Set base to -1 to unroll all the way; no gains in memory efficiency here.
 
 ";
 
+%feature("docstring") casadi::Callback::generate_input "
+
+Export an input file that can be passed to generate C code with a main.
+
+";
+
 %feature("docstring") casadi::Callback::serialize "
 
 Serialize.
@@ -9636,6 +9762,10 @@ classes.
 
 ";
 
+%feature("docstring") casadi::CentralDiff::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::CentralDiff::get_abstol "
 
 [INTERNAL]  Get absolute tolerance.
@@ -9877,6 +10007,12 @@ classes.
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -10161,6 +10297,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::CentralDiff::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::CentralDiff::which_depends "
 
 [INTERNAL]  Which variables enter with some order.
@@ -10353,6 +10493,10 @@ elements.
 [INTERNAL]  Destructor.
 
 ";
+
+%feature("docstring") casadi::CentralDiff::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::CentralDiff::alloc "
 
@@ -10664,6 +10808,10 @@ elements.
 [INTERNAL]  Get function signature: name:(inputs)->(outputs)
 
 ";
+
+%feature("docstring") casadi::CentralDiff::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::CentralDiff::alloc_res "
 
@@ -11231,6 +11379,10 @@ tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
 
+%feature("docstring") casadi::Collocation::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Collocation::call_forward "
 
 [INTERNAL]  Forward mode AD, virtual functions overloaded in derived
@@ -11497,6 +11649,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Collocation::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Collocation::sp_jac_dae "
 
 [INTERNAL]  Create sparsity pattern of the extended Jacobian (forward
@@ -11651,6 +11807,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::Collocation::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Collocation::sprint "
 
 [INTERNAL]  C-style formatted printing to string.
@@ -11658,6 +11818,10 @@ multiplying.
 ";
 
 %feature("docstring") casadi::Collocation::rx "
+
+[INTERNAL] ";
+
+%feature("docstring") casadi::Collocation::iw_offsets "
 
 [INTERNAL] ";
 
@@ -12222,6 +12386,10 @@ classes.
 
 ";
 
+%feature("docstring") casadi::Conic::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Conic::has_jac "
 
 [INTERNAL]  Return Jacobian of all input elements with respect to all output
@@ -12418,6 +12586,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 original
 
 ";
+
+%feature("docstring") casadi::Conic::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Conic::eval_sx "
 
@@ -12675,6 +12847,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 ";
 
+%feature("docstring") casadi::Conic::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Conic::~Conic "
 
 [INTERNAL] ";
@@ -12827,6 +13003,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 [INTERNAL]  Get the (integer) input arguments of an atomic operation.
 
 ";
+
+%feature("docstring") casadi::Conic::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Conic::check_inputs "
 
@@ -13379,6 +13559,12 @@ Internal class.
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -14562,6 +14748,12 @@ Internal class.
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -14628,6 +14820,10 @@ C++ includes: dple_impl.hpp ";
 ";
 
 ";
+
+%feature("docstring") casadi::Dple::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Dple::get_stats "
 
@@ -14766,6 +14962,10 @@ tr:  Flip the relationship. Return which expressions contain the variables
 [INTERNAL]  Get largest input value.
 
 ";
+
+%feature("docstring") casadi::Dple::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Dple::alloc_mem "
 
@@ -15344,6 +15544,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Dple::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Dple::getJacSparsityHierarchicalSymm "
 
 [INTERNAL]  A flavor of getJacSparsity that does hierarchical block
@@ -15473,6 +15677,10 @@ classes.
 
 ";
 
+%feature("docstring") casadi::Dple::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Dple::getJacSparsityGen "
 
 [INTERNAL]  Get the sparsity pattern, forward mode.
@@ -15545,6 +15753,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Expm::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Expm::free_mem "
 
 [INTERNAL]  Free memory block.
@@ -15583,6 +15795,12 @@ elements.
 %feature("docstring") casadi::Expm::symbolic_output "
 
 [INTERNAL]  Get a vector of symbolic variables corresponding to the outputs.
+
+";
+
+%feature("docstring") casadi::Expm::serialize "
+
+[INTERNAL]  Serialize an object.
 
 ";
 
@@ -16141,6 +16359,10 @@ tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
 
+%feature("docstring") casadi::Expm::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Expm::instruction_constant "
 
 [INTERNAL]  Get the floating point output argument of an atomic operation.
@@ -16241,11 +16463,9 @@ elements.
 
 ";
 
-%feature("docstring") casadi::Expm::serialize "
+%feature("docstring") casadi::Expm::w_offsets "
 
-[INTERNAL]  Serialize an object.
-
-";
+[INTERNAL] ";
 
 %feature("docstring") casadi::Expm::size_out "
 
@@ -16467,6 +16687,12 @@ Internal class.
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -16579,6 +16805,10 @@ elements.
 [INTERNAL]  String used to identify the immediate FunctionInternal subclass.
 
 ";
+
+%feature("docstring") casadi::Expm::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Expm::symbolicAdjSeed "
 
@@ -16995,6 +17225,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::External::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::External::tocache "
 
 [INTERNAL]  Save function to cache.
@@ -17376,6 +17610,10 @@ original
 
 ";
 
+%feature("docstring") casadi::External::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::External::call_gen "
 
 [INTERNAL]   Call a function, overloaded.
@@ -17443,6 +17681,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::External::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::External::incache "
 
 [INTERNAL]  Get function in cache.
@@ -17502,6 +17744,10 @@ elements.
 [INTERNAL]  Reverse mode derivatives.
 
 ";
+
+%feature("docstring") casadi::External::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::External::mx_in "
 
@@ -18235,6 +18481,10 @@ C++ includes: fast_newton.hpp ";
 
 ";
 
+%feature("docstring") casadi::FastNewton::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::FastNewton::map "
 
 [INTERNAL]  Generate/retrieve cached serial map.
@@ -18419,6 +18669,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 [INTERNAL]  Get number of temporary variables needed.
 
 ";
+
+%feature("docstring") casadi::FastNewton::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::FastNewton::size2_out "
 
@@ -18652,6 +18906,10 @@ original
 
 ";
 
+%feature("docstring") casadi::FastNewton::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::FastNewton::self "
 
 [INTERNAL]  Get a public class instance.
@@ -18847,6 +19105,10 @@ structure recognition for symmetric Jacobians
 [INTERNAL]  Input/output dimensions.
 
 ";
+
+%feature("docstring") casadi::FastNewton::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::FastNewton::codegen_decref "
 
@@ -19286,6 +19548,12 @@ elements.
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -19504,6 +19772,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::FiniteDiff::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::FiniteDiff::FiniteDiff "
 
 [INTERNAL] ";
@@ -19579,6 +19851,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 [INTERNAL]  Set the (persistent and temporary) work vectors.
 
 ";
+
+%feature("docstring") casadi::FiniteDiff::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::FiniteDiff::alloc_w "
 
@@ -19749,6 +20025,10 @@ propagation.
 
 ";
 
+%feature("docstring") casadi::FiniteDiff::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::FiniteDiff::numel_in "
 
 [INTERNAL]  Number of input/output elements.
@@ -19862,6 +20142,10 @@ original
 [INTERNAL]  Is the scheme using the (nondifferentiated) output?
 
 ";
+
+%feature("docstring") casadi::FiniteDiff::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::FiniteDiff::serialize_body "
 
@@ -20426,6 +20710,10 @@ elements.
 
 [INTERNAL] ";
 
+%feature("docstring") casadi::FixedStepIntegrator::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::FixedStepIntegrator::serialize_body "
 
 [INTERNAL]  Serialize an object without type information.
@@ -20632,6 +20920,10 @@ multiplying.
 [INTERNAL]  Generate/retrieve cached serial map.
 
 ";
+
+%feature("docstring") casadi::FixedStepIntegrator::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::FixedStepIntegrator::sx_out "
 
@@ -20996,6 +21288,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::FixedStepIntegrator::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::FixedStepIntegrator "
 
 
@@ -21244,6 +21540,10 @@ problem)
 [INTERNAL]  Check if output arguments have correct length and dimensions.
 
 ";
+
+%feature("docstring") casadi::FixedStepIntegrator::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::FixedStepIntegrator::replace_arg "
 
@@ -21765,6 +22065,10 @@ classes.
 
 ";
 
+%feature("docstring") casadi::ForwardDiff::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::ForwardDiff::jac "
 
 [INTERNAL]  Return Jacobian of all input elements with respect to all output
@@ -21865,6 +22169,10 @@ elements.
 [INTERNAL]  Replace 0-by-0 outputs.
 
 ";
+
+%feature("docstring") casadi::ForwardDiff::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::ForwardDiff::has_reverse "
 
@@ -22156,6 +22464,12 @@ structure recognition for symmetric Jacobians
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -22254,6 +22568,10 @@ original
 [INTERNAL]  Codegen incref for dependencies.
 
 ";
+
+%feature("docstring") casadi::ForwardDiff::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::ForwardDiff::calc_fd "
 
@@ -22483,6 +22801,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 elements.
 
 ";
+
+%feature("docstring") casadi::ForwardDiff::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::ForwardDiff::replace_arg "
 
@@ -23391,6 +23713,12 @@ Checkout a memory object.
 
 ";
 
+%feature("docstring") casadi::Function::generate_input "
+
+Export an input file that can be passed to generate C code with a main.
+
+";
+
 %feature("docstring") casadi::Function::print_option "
 
 Print all information there is to know about a certain option.
@@ -23677,6 +24005,12 @@ member functions. Joel Andersson >List of available options
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -24072,6 +24406,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::GenericExternal::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::GenericExternal::has_sprev "
 
 [INTERNAL]  Is the class able to propagate seeds through the algorithm?
@@ -24155,6 +24493,10 @@ elements.
 [INTERNAL]  Forward mode derivatives.
 
 ";
+
+%feature("docstring") casadi::GenericExternal::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::GenericExternal::disp "
 
@@ -24516,6 +24858,10 @@ propagation.
 
 ";
 
+%feature("docstring") casadi::GenericExternal::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::GenericExternal::call "
 
 [INTERNAL]   Call a function, templated.
@@ -24652,6 +24998,10 @@ structure recognition for symmetric Jacobians
 multiplying.
 
 ";
+
+%feature("docstring") casadi::GenericExternal::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::GenericExternal::alloc_w "
 
@@ -26527,11 +26877,19 @@ elements.
 
 ";
 
+%feature("docstring") casadi::ImplicitFixedStepIntegrator::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::ImplicitFixedStepIntegrator::codegen "
 
 [INTERNAL]  Generate code the function.
 
 ";
+
+%feature("docstring") casadi::ImplicitFixedStepIntegrator::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::ImplicitFixedStepIntegrator::free_sx "
 
@@ -26581,6 +26939,10 @@ elements.
 [INTERNAL]  Names of function input and outputs.
 
 ";
+
+%feature("docstring") casadi::ImplicitFixedStepIntegrator::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring")
 casadi::ImplicitFixedStepIntegrator::getJacSparsityHierarchicalSymm "
@@ -27069,6 +27431,10 @@ elements.
 [INTERNAL]  Replace 0-by-0 outputs.
 
 ";
+
+%feature("docstring") casadi::ImplicitFixedStepIntegrator::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::ImplicitFixedStepIntegrator::create_function "
 
@@ -27802,6 +28168,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::ImplicitToNlp::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::ImplicitToNlp::slice "
 
 [INTERNAL]  returns a new function with a selection of inputs/outputs of the
@@ -27891,6 +28261,10 @@ propagation.
 
 [INTERNAL] ";
 
+%feature("docstring") casadi::ImplicitToNlp::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::ImplicitToNlp::clear_mem "
 
 [INTERNAL]  Clear all memory (called from destructor)
@@ -27960,6 +28334,10 @@ generated function.
 ";
 
 %feature("docstring") casadi::ImplicitToNlp::get_function "
+
+[INTERNAL] ";
+
+%feature("docstring") casadi::ImplicitToNlp::iw_offsets "
 
 [INTERNAL] ";
 
@@ -28112,6 +28490,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 [INTERNAL]  Number of input/output nonzeros.
 
 ";
+
+%feature("docstring") casadi::ImplicitToNlp::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::ImplicitToNlp::wrap "
 
@@ -28624,6 +29006,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Integrator::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Integrator::setup "
 
 [INTERNAL]  Set the (persistent and temporary) work vectors.
@@ -28798,6 +29184,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 ";
 
+%feature("docstring") casadi::Integrator::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Integrator::sp_jac_dae "
 
 [INTERNAL]  Create sparsity pattern of the extended Jacobian (forward
@@ -28828,6 +29218,10 @@ problem)
 [INTERNAL]  Generate code for the function body.
 
 ";
+
+%feature("docstring") casadi::Integrator::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Integrator::get_jacobian "
 
@@ -29157,6 +29551,10 @@ elements.
 [INTERNAL]  Number of function inputs and outputs.
 
 ";
+
+%feature("docstring") casadi::Integrator::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Integrator::forward "
 
@@ -30013,6 +30411,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::Interpolant::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Interpolant::getJacSparsityHierarchicalSymm "
 
 [INTERNAL]  A flavor of getJacSparsity that does hierarchical block
@@ -30089,6 +30491,10 @@ structure recognition for symmetric Jacobians
 [INTERNAL]  Get largest input value.
 
 ";
+
+%feature("docstring") casadi::Interpolant::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Interpolant::is_a "
 
@@ -30525,6 +30931,12 @@ Internal class
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -30901,6 +31313,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Interpolant::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Interpolant::mapsum_mx "
 
 [INTERNAL]  Parallel evaluation.
@@ -30926,6 +31342,10 @@ elements.
 ";
 
 %feature("docstring") casadi::Interpolant::plugin_name "
+
+[INTERNAL] ";
+
+%feature("docstring") casadi::Interpolant::iw_offsets "
 
 [INTERNAL] ";
 
@@ -31416,6 +31836,12 @@ Lagrangian (if \"values\" is not NULL)
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -31943,6 +32369,14 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 ";
 
+%feature("docstring") casadi::JitFunction::w_offset "
+
+[INTERNAL] ";
+
+%feature("docstring") casadi::JitFunction::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::JitFunction::generate_lifted "
 
 [INTERNAL]  Extract the functions needed for the Lifted Newton method.
@@ -32002,6 +32436,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 [INTERNAL]  Get an atomic operation operator index.
 
 ";
+
+%feature("docstring") casadi::JitFunction::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::JitFunction::call_forward "
 
@@ -32079,6 +32517,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 [INTERNAL]  Ensure required length of arg field.
 
 ";
+
+%feature("docstring") casadi::JitFunction::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::JitFunction::codegen_meta "
 
@@ -32775,6 +33217,12 @@ A: A = L.U, with L lower and U upper triangular
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -33158,6 +33606,12 @@ A: A = Q.R, with Q orthogonal and R upper triangular
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -33584,6 +34038,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 
 ";
 
+%feature("docstring") casadi::LinearInterpolant::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::LinearInterpolant::sx_out "
 
 [INTERNAL]  Get function input(s) and output(s)
@@ -33833,6 +34291,10 @@ Evaluate a function, overloaded.
 
 ";
 
+%feature("docstring") casadi::LinearInterpolant::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::LinearInterpolant::instruction_constant "
 
 [INTERNAL]  Get the floating point output argument of an atomic operation.
@@ -34008,6 +34470,10 @@ structure recognition for symmetric Jacobians
 
 ";
 
+%feature("docstring") casadi::LinearInterpolant::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::LinearInterpolant::call_forward "
 
 [INTERNAL]  Forward mode AD, virtual functions overloaded in derived
@@ -34141,6 +34607,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 [INTERNAL]  Finalize the object creation.
 
 ";
+
+%feature("docstring") casadi::LinearInterpolant::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::LinearInterpolant::getJacSparsityHierarchical
 "
@@ -34435,6 +34905,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::LinearInterpolantJac::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::LinearInterpolantJac::factory "
 
 [INTERNAL] ";
@@ -34672,6 +35146,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 [INTERNAL]  Input/output sparsity.
 
 ";
+
+%feature("docstring") casadi::LinearInterpolantJac::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::LinearInterpolantJac::instruction_input "
 
@@ -35082,6 +35560,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::LinearInterpolantJac::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::LinearInterpolantJac::free_mx "
 
 [INTERNAL]  Get free variables ( MX)
@@ -35401,6 +35883,10 @@ elements.
 [INTERNAL]  Get largest input value.
 
 ";
+
+%feature("docstring") casadi::LinearInterpolantJac::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::LinearInterpolantJac::has_jac "
 
@@ -36794,6 +37280,10 @@ propagation.
 
 ";
 
+%feature("docstring") casadi::Map::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Map::checkout "
 
 [INTERNAL]  Checkout a memory object.
@@ -36816,6 +37306,10 @@ propagation.
 ";
 
 ";
+
+%feature("docstring") casadi::Map::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Map::get_default_in "
 
@@ -36842,6 +37336,10 @@ derivatives
 
 ";
 
+%feature("docstring") casadi::Map::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Map::sz_w "
 
 [INTERNAL]  Get required length of w field.
@@ -36865,6 +37363,10 @@ derivatives
 [INTERNAL]  Obtain solver name from Adaptor.
 
 ";
+
+%feature("docstring") casadi::Map::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Map::fwd_seed "
 
@@ -39288,6 +39790,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Newton::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Newton::get_free "
 
 [INTERNAL]  Print free variables.
@@ -39384,6 +39890,10 @@ original
 [INTERNAL]  Ensure required length of res field.
 
 ";
+
+%feature("docstring") casadi::Newton::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Newton::get_n_out "
 
@@ -40043,6 +40553,10 @@ structure recognition.
 
 ";
 
+%feature("docstring") casadi::Newton::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Newton::create_function "
 
 [INTERNAL]  Create an oracle function
@@ -40251,6 +40765,10 @@ Evaluate a function, overloaded.
 [INTERNAL]  Get number of temporary variables needed.
 
 ";
+
+%feature("docstring") casadi::Newton::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Newton::factory "
 
@@ -40645,6 +41163,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Nlpsol::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Nlpsol::monitored "
 
 [INTERNAL] ";
@@ -40805,6 +41327,10 @@ structure recognition for symmetric Jacobians
 [INTERNAL]  Check if the function is of a particular type.
 
 ";
+
+%feature("docstring") casadi::Nlpsol::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Nlpsol::get_max_in "
 
@@ -41501,6 +42027,10 @@ propagation.
 
 ";
 
+%feature("docstring") casadi::Nlpsol::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Nlpsol::codegen_name "
 
 [INTERNAL]  Get name in codegen.
@@ -41542,6 +42072,10 @@ propagation.
 [INTERNAL]  Obtain solver name from Adaptor.
 
 ";
+
+%feature("docstring") casadi::Nlpsol::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Nlpsol::get_partition "
 
@@ -41671,6 +42205,10 @@ C++ includes: nonzeros.hpp ";
 
 ";
 
+%feature("docstring") casadi::OmpMap::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::OmpMap::index_in "
 
 [INTERNAL]  Get input scheme index by name.
@@ -41787,6 +42325,10 @@ tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
 
+%feature("docstring") casadi::OmpMap::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::OmpMap::call_forward "
 
 [INTERNAL]  Forward mode AD, virtual functions overloaded in derived
@@ -41850,6 +42392,10 @@ classes.
 elements.
 
 ";
+
+%feature("docstring") casadi::OmpMap::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::OmpMap::definition "
 
@@ -42181,6 +42727,10 @@ C++ includes: map.hpp ";
 [INTERNAL]  Input/output dimensions.
 
 ";
+
+%feature("docstring") casadi::OmpMap::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::OmpMap::codegen_body "
 
@@ -43858,6 +44408,10 @@ structure recognition for symmetric Jacobians
 
 ";
 
+%feature("docstring") casadi::OracleFunction::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::OracleFunction::get_sparsity_in "
 
 [INTERNAL]  Get sparsity of a given input.
@@ -44017,6 +44571,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::OracleFunction::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::OracleFunction::ad_weight "
 
 [INTERNAL]  Weighting factor for chosing forward/reverse mode.
@@ -44113,6 +44671,10 @@ forward(nfwd) returns a cached instance if available, and calls  Function
 get_forward(casadi_int nfwd) if no cached version is available.
 
 ";
+
+%feature("docstring") casadi::OracleFunction::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::OracleFunction::jac "
 
@@ -44394,6 +44956,12 @@ Joel Andersson
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -44724,6 +45292,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::OracleFunction::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::OracleFunction::init_mem "
 
 [INTERNAL]  Initalize memory block.
@@ -44897,6 +45469,10 @@ Remove excess zeros.
 [INTERNAL]  Is codegen supported?
 
 ";
+
+%feature("docstring") casadi::QpToNlp::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::QpToNlp::info "
 
@@ -45414,6 +45990,10 @@ generated function.
 
 ";
 
+%feature("docstring") casadi::QpToNlp::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::QpToNlp::has_spfwd "
 
 [INTERNAL]  Is the class able to propagate seeds through the algorithm?
@@ -45592,6 +46172,10 @@ elements.
 [INTERNAL]  Clear all memory (called from destructor)
 
 ";
+
+%feature("docstring") casadi::QpToNlp::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::QpToNlp::signature "
 
@@ -45972,6 +46556,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::QpToNlp::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::QpToNlp::eval_dm "
 
 [INTERNAL]  Evaluate with DM matrices.
@@ -46004,6 +46592,10 @@ elements.
 [INTERNAL]  Can derivatives be calculated in any way?
 
 ";
+
+%feature("docstring") casadi::Qrqp::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Qrqp::forward "
 
@@ -46231,6 +46823,12 @@ tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
 
+%feature("docstring") casadi::Qrqp::serialize "
+
+[INTERNAL]  Serialize an object.
+
+";
+
 %feature("docstring") casadi::Qrqp::sz_res "
 
 [INTERNAL]  Get required length of res field.
@@ -46242,6 +46840,10 @@ tr:  Flip the relationship. Return which expressions contain the variables
 [INTERNAL]  Evaluate with DM matrices.
 
 ";
+
+%feature("docstring") casadi::Qrqp::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Qrqp::has_free "
 
@@ -46283,6 +46885,10 @@ tr:  Flip the relationship. Return which expressions contain the variables
 [INTERNAL]  Get smallest input value.
 
 ";
+
+%feature("docstring") casadi::Qrqp::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Qrqp::size2_in "
 
@@ -46403,11 +47009,9 @@ elements.
 
 ";
 
-%feature("docstring") casadi::Qrqp::serialize "
+%feature("docstring") casadi::Qrqp::w_offsets "
 
-[INTERNAL]  Serialize an object.
-
-";
+[INTERNAL] ";
 
 %feature("docstring") casadi::Qrqp::jit_dependencies "
 
@@ -47878,6 +48482,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Qrsqp::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Qrsqp::generate_dependencies "
 
 [INTERNAL]  Export / Generate C code for the generated functions.
@@ -47977,6 +48585,10 @@ Print iteration.
 
 [INTERNAL] ";
 
+%feature("docstring") casadi::Qrsqp::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Qrsqp::codegen_name "
 
 [INTERNAL]  Get name in codegen.
@@ -48035,6 +48647,10 @@ generated function.
 [INTERNAL]  Names of function input and outputs.
 
 ";
+
+%feature("docstring") casadi::Qrsqp::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Qrsqp::solve "
 
@@ -48101,6 +48717,10 @@ tr:  Flip the relationship. Return which expressions contain the variables
 [INTERNAL]  Obtain solver name from Adaptor.
 
 ";
+
+%feature("docstring") casadi::Qrsqp::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Qrsqp::serialize_type "
 
@@ -48401,6 +49021,10 @@ classes.
 original
 
 ";
+
+%feature("docstring") casadi::Rootfinder::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Rootfinder::codegen_incref "
 
@@ -48854,6 +49478,10 @@ elements.
 ";
 
 %feature("docstring") casadi::Rootfinder::plugin_name "
+
+[INTERNAL] ";
+
+%feature("docstring") casadi::Rootfinder::w_offset "
 
 [INTERNAL] ";
 
@@ -49387,11 +50015,19 @@ structure recognition for symmetric Jacobians
 
 ";
 
+%feature("docstring") casadi::Rootfinder::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Rootfinder::codegen_body "
 
 [INTERNAL]  Generate code for the function body.
 
 ";
+
+%feature("docstring") casadi::Rootfinder::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Rootfinder::eval_gen "
 
@@ -49814,6 +50450,10 @@ problem)
 
 [INTERNAL] ";
 
+%feature("docstring") casadi::RungeKutta::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::RungeKutta::t "
 
 [INTERNAL] ";
@@ -50012,6 +50652,12 @@ problem)
 
 ";
 
+%feature("docstring") casadi::RungeKutta::sprint "
+
+[INTERNAL]  C-style formatted printing to string.
+
+";
+
 %feature("docstring") casadi::RungeKutta::print_fstats "
 
 [INTERNAL]  Print statistics.
@@ -50081,6 +50727,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 [INTERNAL]  Set the (persistent and temporary) work vectors.
 
 ";
+
+%feature("docstring") casadi::RungeKutta::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::RungeKutta::alloc_w "
 
@@ -50467,11 +51117,9 @@ original
 
 ";
 
-%feature("docstring") casadi::RungeKutta::sprint "
+%feature("docstring") casadi::RungeKutta::w_offset "
 
-[INTERNAL]  C-style formatted printing to string.
-
-";
+[INTERNAL] ";
 
 %feature("docstring") casadi::RungeKutta::replace_fseed "
 
@@ -50662,6 +51310,10 @@ structure recognition for symmetric Jacobians
 [INTERNAL]   Call a function, templated.
 
 ";
+
+%feature("docstring") casadi::RungeKutta::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::RungeKutta::plugin_name "
 
@@ -51320,6 +51972,10 @@ original
 
 [INTERNAL] ";
 
+%feature("docstring") casadi::Scpgen::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Scpgen::check_arg "
 
 [INTERNAL]  Check if input arguments have correct length and dimensions.
@@ -51331,6 +51987,10 @@ original
 [INTERNAL]  Checkout a memory object.
 
 ";
+
+%feature("docstring") casadi::Scpgen::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Scpgen::get_default_in "
 
@@ -51639,6 +52299,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Scpgen::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Scpgen::sp_forward "
 
 [INTERNAL]  Propagate sparsity forward.
@@ -51698,6 +52362,10 @@ elements.
 [INTERNAL]  get MX expression associated with instruction
 
 ";
+
+%feature("docstring") casadi::Scpgen::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Scpgen::get_stats "
 
@@ -52695,6 +53363,10 @@ propagation.
 
 ";
 
+%feature("docstring") casadi::SlicotDple::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::SlicotDple::fwd_seed "
 
 [INTERNAL]  Symbolic expressions for the forward seeds.
@@ -53030,6 +53702,10 @@ structure recognition.
 
 ";
 
+%feature("docstring") casadi::SlicotDple::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::SlicotDple::checkout "
 
 [INTERNAL]  Checkout a memory object.
@@ -53179,6 +53855,10 @@ structure recognition.
 
 ";
 
+%feature("docstring") casadi::SlicotDple::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::SlicotDple::class_name "
 
 [INTERNAL]  Readable name of the internal class.
@@ -53244,6 +53924,10 @@ structure recognition.
 [INTERNAL]  Options.
 
 ";
+
+%feature("docstring") casadi::SlicotDple::iw_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::SlicotDple::nnz_out "
 
@@ -54004,6 +54688,10 @@ Joris Gillis
 
 C++ includes: slicot_expm.hpp ";
 
+%feature("docstring") casadi::SlicotExpm::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::SlicotExpm::size1_in "
 
 [INTERNAL]  Input/output dimensions.
@@ -54538,6 +55226,10 @@ generated function.
 
 ";
 
+%feature("docstring") casadi::SlicotExpm::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::SlicotExpm::construct "
 
 [INTERNAL]  Construct Prepares the function for evaluation.
@@ -54591,6 +55283,10 @@ generated function.
 [INTERNAL]  Jit dependencies.
 
 ";
+
+%feature("docstring") casadi::SlicotExpm::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::SlicotExpm::size1_out "
 
@@ -54682,6 +55378,10 @@ order:  Only 1 (linear) and 2 (nonlinear) allowed
 tr:  Flip the relationship. Return which expressions contain the variables
 
 ";
+
+%feature("docstring") casadi::SlicotExpm::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::SlicotExpm::set_temp "
 
@@ -54933,6 +55633,12 @@ Andersson
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -55348,6 +56054,10 @@ classes.
 
 ";
 
+%feature("docstring") casadi::Smoothing::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Smoothing::has_err "
 
 [INTERNAL] ";
@@ -55601,6 +56311,10 @@ elements.
 
 ";
 
+%feature("docstring") casadi::Smoothing::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Smoothing::construct "
 
 [INTERNAL]  Construct Prepares the function for evaluation.
@@ -55624,6 +56338,10 @@ elements.
 [INTERNAL]  Get function signature: name:(inputs)->(outputs)
 
 ";
+
+%feature("docstring") casadi::Smoothing::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Smoothing::n_instructions "
 
@@ -55832,6 +56550,10 @@ Evaluate a function, overloaded.
 [INTERNAL]  Print list of options.
 
 ";
+
+%feature("docstring") casadi::Smoothing::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Smoothing::has_reverse "
 
@@ -57017,6 +57739,10 @@ elements (i, j) with j>=i.
 
 ";
 
+%feature("docstring") casadi::Sqpmethod::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Sqpmethod::release "
 
 [INTERNAL]  Release a memory object.
@@ -57028,6 +57754,10 @@ elements (i, j) with j>=i.
 [INTERNAL]  Get a public class instance.
 
 ";
+
+%feature("docstring") casadi::Sqpmethod::codegen_qp_solve "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Sqpmethod::set_temp "
 
@@ -57045,12 +57775,6 @@ propagation.
 %feature("docstring") casadi::Sqpmethod::getJacSparsityGen "
 
 [INTERNAL]  Get the sparsity pattern, forward mode.
-
-";
-
-%feature("docstring") casadi::Sqpmethod::codegen_body "
-
-[INTERNAL]  Generate code for the function body.
 
 ";
 
@@ -57206,6 +57930,12 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::Sqpmethod::incache "
+
+[INTERNAL]  Get function in cache.
+
+";
+
 %feature("docstring") casadi::Sqpmethod::get_reverse "
 
 [INTERNAL]  Generate a function that calculates reverse mode derivatives.
@@ -57331,16 +58061,9 @@ generated function.
 
 ";
 
-%feature("docstring") casadi::Sqpmethod::print_iteration "
+%feature("docstring") casadi::Sqpmethod::init_mem "
 
-[INTERNAL]  Print iteration.
-
->  void casadi::Sqpmethod::print_iteration(casadi_int iter, double obj, double pr_inf, double du_inf, double dx_norm, double reg, casadi_int ls_trials, bool ls_success) const 
-------------------------------------------------------------------------
-[INTERNAL] 
-Print iteration.
-
-";
+[INTERNAL]  Initalize memory block.
 
 ";
 
@@ -57574,9 +58297,9 @@ get_forward(casadi_int nfwd) if no cached version is available.
 
 ";
 
-%feature("docstring") casadi::Sqpmethod::incache "
+%feature("docstring") casadi::Sqpmethod::codegen_body "
 
-[INTERNAL]  Get function in cache.
+[INTERNAL]  Generate code for the function body.
 
 ";
 
@@ -57877,6 +58600,10 @@ C++ includes: sqpmethod.hpp ";
 
 ";
 
+%feature("docstring") casadi::Sqpmethod::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Sqpmethod::replace_aseed "
 
 [INTERNAL]
@@ -58037,9 +58764,16 @@ get_reverse(casadi_int nadj) if no cached version is available.
 
 ";
 
-%feature("docstring") casadi::Sqpmethod::init_mem "
+%feature("docstring") casadi::Sqpmethod::print_iteration "
 
-[INTERNAL]  Initalize memory block.
+[INTERNAL]  Print iteration.
+
+>  void casadi::Sqpmethod::print_iteration(casadi_int iter, double obj, double pr_inf, double du_inf, double dx_norm, double reg, casadi_int ls_trials, bool ls_success) const 
+------------------------------------------------------------------------
+[INTERNAL] 
+Print iteration.
+
+";
 
 ";
 
@@ -58106,6 +58840,10 @@ get_reverse(casadi_int nadj) if no cached version is available.
 [INTERNAL]  Code generate the function.
 
 ";
+
+%feature("docstring") casadi::Sqpmethod::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Sqpmethod::calc_function "
 
@@ -58257,6 +58995,10 @@ elements.
 elements.
 
 ";
+
+%feature("docstring") casadi::Sqpmethod::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Sqpmethod::get_partition "
 
@@ -58723,6 +59465,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::Switch::w_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Switch::size_out "
 
 [INTERNAL]  Input/output dimensions.
@@ -58963,6 +59709,10 @@ propagation.
 
 ";
 
+%feature("docstring") casadi::Switch::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::Switch::sx_out "
 
 [INTERNAL]  Get function input(s) and output(s)
@@ -58974,6 +59724,10 @@ propagation.
 [INTERNAL]  Options.
 
 ";
+
+%feature("docstring") casadi::Switch::w_offsets "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Switch::disp "
 
@@ -59180,6 +59934,10 @@ elements.
 [INTERNAL]  Create memory block.
 
 ";
+
+%feature("docstring") casadi::Switch::iw_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::Switch::getJacSparsityHierarchical "
 
@@ -59633,6 +60391,12 @@ Joel Andersson
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -60538,6 +61302,10 @@ structure recognition.
 
 ";
 
+%feature("docstring") casadi::ThreadMap::iw_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::ThreadMap::getJacSparsity "
 
 [INTERNAL]  Generate the sparsity of a Jacobian block.
@@ -60733,6 +61501,10 @@ get_forward(casadi_int nfwd) if no cached version is available.
 
 ";
 
+%feature("docstring") casadi::ThreadMap::iw_offset "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::ThreadMap::clear_mem "
 
 [INTERNAL]  Clear all memory (called from destructor)
@@ -60796,6 +61568,10 @@ multiplying.
 
 ";
 
+%feature("docstring") casadi::ThreadMap::w_offsets "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::ThreadMap::alloc_res "
 
 [INTERNAL]  Ensure required length of res field.
@@ -60807,6 +61583,10 @@ multiplying.
 [INTERNAL]  Print all information there is to know about a certain option.
 
 ";
+
+%feature("docstring") casadi::ThreadMap::w_offset "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::ThreadMap::symbolic_output "
 
@@ -61280,6 +62060,12 @@ General information
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
 +------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
++------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
 |                  |                 | jit compiler.    |                  |
@@ -61631,6 +62417,10 @@ Check if the vector has negative entries.
 
 ";
 
+%feature("docstring") casadi::casadi_vfmin "
+
+[INTERNAL] ";
+
 %feature("docstring") casadi::to_slice "
 
 Construct from an index vector (requires is_slice(v) to be true)
@@ -61657,6 +62447,10 @@ Construct from an index vector (requires is_slice(v) to be true)
 Get the documentation string for a plugin.
 
 ";
+
+%feature("docstring") casadi::getcopy "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::expm_n_in "
 
@@ -61732,6 +62526,10 @@ Number of rootfinder inputs.
 Check if a particular plugin is available.
 
 ";
+
+%feature("docstring") casadi::casadi_bound_consistency "
+
+[INTERNAL] ";
 
 %feature("docstring") casadi::casadi_central_diff "
 
@@ -62051,6 +62849,12 @@ General information
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
@@ -62777,7 +63581,7 @@ Get integrator input scheme name by index.
 
 ";
 
-%feature("docstring") casadi::getcopy "
+%feature("docstring") casadi::casadi_vfmax "
 
 [INTERNAL] ";
 
@@ -63179,6 +63983,12 @@ General information
 |                  |                 | compiler to      | Internal         |
 |                  |                 | speed up the     |                  |
 |                  |                 | evaluation       |                  |
++------------------+-----------------+------------------+------------------+
+| jit_cleanup      | OT_BOOL         | Cleanup up the   | casadi::Function |
+|                  |                 | temporary source | Internal         |
+|                  |                 | file that jit    |                  |
+|                  |                 | creates.         |                  |
+|                  |                 | Default: true    |                  |
 +------------------+-----------------+------------------+------------------+
 | jit_options      | OT_DICT         | Options to be    | casadi::Function |
 |                  |                 | passed to the    | Internal         |
