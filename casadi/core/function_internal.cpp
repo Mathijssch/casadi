@@ -2098,6 +2098,58 @@ namespace casadi {
     }
   }
 
+  void FunctionInternal::alloc_w(const std::string& name, size_t sz_w, bool persistent) {
+    alloc_w(sz_w, persistent);
+    w_offsets_[name] = w_offset_;
+    w_size_[name] = sz_w;
+    w_offset_ += sz_w;
+  }
+
+  void FunctionInternal::alloc_iw(const std::string& name, size_t sz_iw, bool persistent) {
+    alloc_iw(sz_iw, persistent);
+    iw_offsets_[name] = iw_offset_;
+    iw_size_[name] = sz_iw;
+    iw_offset_ += sz_iw;
+  }
+
+  size_t FunctionInternal::w_offset(const std::string& name) const {
+    auto it = w_offsets_.find(name);
+    casadi_assert(it!=w_offsets_.end(), "Not found: " + name);
+    return it->second;
+  }
+
+  double* FunctionInternal::w_offset(double*& w, const std::string& name) const {
+    auto it = w_size_.find(name);
+    casadi_assert(it!=w_size_.end(), "Not found: " + name);
+    double* ret = w;
+    w += it->second;
+    return ret;
+  }
+
+  size_t FunctionInternal::iw_offset(const std::string& name) const {
+    auto it = iw_offsets_.find(name);
+    casadi_assert(it!=iw_offsets_.end(), "Not found: " + name);
+    return it->second;
+  }
+
+  casadi_int* FunctionInternal::iw_offset(casadi_int*& iw, const std::string& name) const {
+    auto it = iw_size_.find(name);
+    casadi_assert(it!=iw_size_.end(), "Not found: " + name);
+    casadi_int* ret = iw;
+    iw += it->second;
+    return ret;
+  }
+
+  size_t FunctionInternal::iw_offset() const { return iw_offset_; }
+  size_t FunctionInternal::w_offset() const { return w_offset_; }
+
+  const std::map<std::string, size_t>& FunctionInternal::w_offsets() const {
+    return w_offsets_;
+  }
+  const std::map<std::string, size_t>& FunctionInternal::iw_offsets() const {
+    return iw_offsets_;
+  }
+
   void FunctionInternal::alloc(const Function& f, bool persistent) {
     if (f.is_null()) return;
     size_t sz_arg, sz_res, sz_iw, sz_w;

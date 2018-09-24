@@ -691,6 +691,12 @@ namespace casadi {
     /** \brief Ensure required length of w field */
     void alloc_w(size_t sz_w, bool persistent=false);
 
+    /** \brief Ensure required length of iw field */
+    void alloc_iw(const std::string& name, size_t sz_iw, bool persistent=false);
+
+    /** \brief Ensure required length of w field */
+    void alloc_w(const std::string& name, size_t sz_w, bool persistent=false);
+
     /** \brief Ensure work vectors long enough to evaluate function */
     void alloc(const Function& f, bool persistent=false);
 
@@ -822,6 +828,17 @@ namespace casadi {
 
     static std::map<std::string, ProtoFunction* (*)(DeSerializer&)> deserialize_map;
 
+    size_t w_offset(const std::string& name) const;
+    size_t iw_offset(const std::string& name) const;
+    size_t iw_offset() const;
+    size_t w_offset() const;
+
+    double* w_offset(double*& w, const std::string& name) const;
+    casadi_int* iw_offset(casadi_int*& iw, const std::string& name) const;
+
+    const std::map<std::string, size_t>& w_offsets() const;
+    const std::map<std::string, size_t>& iw_offsets() const;
+
   protected:
     /** \brief Populate jac_sparsity_ and jac_sparsity_compact_ during initialization */
     void set_jac_sparsity(const Sparsity& sp);
@@ -832,6 +849,10 @@ namespace casadi {
 
     /** \brief Temporary memory inside a function */
     size_t sz_arg_tmp_, sz_res_tmp_, sz_iw_tmp_, sz_w_tmp_;
+
+    size_t w_offset_ = 0, iw_offset_ = 0;
+
+    std::map<std::string, size_t> w_offsets_, iw_offsets_, w_size_, iw_size_;
   };
 
   // Template implementations

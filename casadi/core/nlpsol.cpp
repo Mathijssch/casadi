@@ -394,11 +394,11 @@ namespace casadi {
     }
 
     // Allocate work vectors
-    alloc_w(nx_ + ng_, true); // z
-    alloc_w(nx_ + ng_, true); // lam
-    alloc_w(nx_ + ng_, true); // lbz
-    alloc_w(nx_ + ng_, true); // ubz
-    alloc_w(np_, true); // lam_p
+    alloc_w("z", nx_ + ng_, true);
+    alloc_w("lam", nx_ + ng_, true);
+    alloc_w("lbz", nx_ + ng_, true);
+    alloc_w("ubz", nx_ + ng_, true);
+    alloc_w("lam_p", np_, true);
 
     if (!fcallback_.is_null()) {
       // Consistency checks
