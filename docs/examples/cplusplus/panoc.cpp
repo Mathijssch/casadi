@@ -48,26 +48,48 @@ int main(){
   SX f = pow(x, 2) + pow(tanh(y), 2);
   SX g = vertcat(cos(x+y)+0.5, sin(x)+0.5);
   SXDict nlp = {{"x", SX::vertcat({x,y})},
-                {"f", f},
-                {"g", g}};
+               {"f", f},
+               {"g", g}};
+
+
+  // Formulate the NLP
+  //SX f = pow(x, 2) + pow(y-1, 2);
+  //SX g = vertcat(x+y, x);
+  //SXDict nlp = {{"x", SX::vertcat({x,y})},
+  //              {"f", f},
+  //              {"g", g}};
 
   Dict opts;
   opts["outer_iterations"] = 12;
   // Create an NLP solver
   Function solver = nlpsol("solver", "panoc", nlp, opts);
+  Dict opts_ref;
+  opts_ref["qpsol"] = "qpoases";
+  Function solver_ref = nlpsol("solver", "sqpmethod", nlp, opts_ref);
 
   // Solve the Rosenbrock problem
   DMDict arg;
-  arg["x0"] = vector<double>{-0.5, -1.8};
+  arg["x0"] = vector<double>{0, 0};
   arg["lbg"] = vector<double>{0, -inf};
   arg["ubg"] = vector<double>{0, 0};
+  //arg["x0"] = vector<double>{0, 0};
+  //arg["lbg"] = vector<double>{0, 0};
+  //arg["ubg"] = vector<double>{inf, inf};
+  DMDict res_ref = solver_ref(arg);
   DMDict res = solver(arg);
-
   //  Print solution
   cout << "Optimal cost:                     " << res.at("f") << endl;
   cout << "Primal solution:                  " << res.at("x") << endl;
   cout << "Dual solution (simple bounds):    " << res.at("lam_x") << endl;
   cout << "Dual solution (nonlinear bounds): " << res.at("lam_g") << endl;
+
+  cout << "Iteration count:" << solver.stats()["iter_count"] << endl;
+
+  //  Print solution
+  cout << "Optimal cost:                     " << res_ref.at("f") << endl;
+  cout << "Primal solution:                  " << res_ref.at("x") << endl;
+  cout << "Dual solution (simple bounds):    " << res_ref.at("lam_x") << endl;
+  cout << "Dual solution (nonlinear bounds): " << res_ref.at("lam_g") << endl;
 
   cout << "Iteration count:" << solver.stats()["iter_count"] << endl;
 

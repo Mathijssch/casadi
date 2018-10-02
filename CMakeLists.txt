@@ -603,7 +603,7 @@ add_feature_info(qpoases-interface WITH_QPOASES "Interface to the active-set QP 
 # PANOC
 option(WITH_PANOC "Compile the interface to PANOC (the source code for PANOC is included)" OFF)
 if(WITH_PANOC)
-  set(PANOC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/external_packages/PANOC/include)
+  set(PANOC_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/external_packages/PANOC/include ${PROJECT_SOURCE_DIR}/external_packages/PANOC/globals)
   set(PANOC_LIBRARIES casadi_panoc)
 endif()
 add_feature_info(panoc-interface WITH_PANOC "Interface to the PANOC solver.")

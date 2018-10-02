@@ -5,4 +5,5 @@ file(GLOB constraint_SRC
     "constraints/*.c"
 )
 
-add_library(PANOC_lib STATIC ${panoc_SRC} ${constraint_SRC})
+message("hey ${constraint_SRC}")
+add_library(PANOC_lib STATIC foo.c ${panoc_SRC} ${constraint_SRC})

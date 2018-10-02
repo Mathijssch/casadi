@@ -20,8 +20,8 @@ struct optimizer_extended_problem{
     int (*constraints)(const real_t* x,real_t* out);
     int (*constraints_forwad_diff)(const real_t* x,const real_t* y,real_t* out); /* returns inner product -> out=constraint(x)^T*y */
     unsigned int number_of_constraints;
-    real_t* lower_bounds_constraints;
-    real_t* upper_bounds_constraints;
+    const real_t* lower_bounds_constraints;
+    const real_t* upper_bounds_constraints;
     unsigned int max_loops;
 };
 

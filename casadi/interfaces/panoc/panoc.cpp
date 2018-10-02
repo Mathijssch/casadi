@@ -28,6 +28,10 @@
 #include "casadi/core/casadi_misc.hpp"
 #include "casadi/core/calculus.hpp"
 
+extern "C" {
+#include "optimizer.h"
+}
+
 using namespace std;
 namespace casadi {
 
@@ -61,7 +65,7 @@ namespace casadi {
      {{"outer_iterations",
        {OT_INT,
         "Maximum number of loops solving the lagrangian."}},
-      {"inter_interations",
+      {"inter_iterations",
        {OT_INT,
         "Maximum number of loops solving with PANOC."}},
       {"tolerance",
@@ -86,7 +90,8 @@ namespace casadi {
     outer_iterations_=10;
     inner_iterations_=300;
     tolerance_=0.001;
-    constraints_weight_=100.;
+    constraints_weight_= 1; //std::vector<double>(nx_, 1.);
+    buffer_size_=15; 
 
     // Read user options
     for (auto&& op : opts) {
@@ -98,8 +103,12 @@ namespace casadi {
         tolerance_ = op.second;
       } else if (op.first=="constraints_weight") {
         constraints_weight_ = op.second;
+      } else if (op.first=="buffer_size") {
+        buffer_size_ = op.second;
       }
     }
+
+    //casadi_assert(constraints_weight_.size()==nx_, "Dimension mismatch constraints_weight");
 
     uout() << "outer_iterations: " << outer_iterations_ << std::endl;
 
@@ -109,6 +118,7 @@ namespace casadi {
 
 
     create_function("nlp_g", {"x", "p"}, {"g"});
+    create_function("nlp_f", {"x", "p"}, {"f"});
     create_function("nlp_fwd_g", {"x", "p","fwd:x"},{"fwd:g"});
 
     // Allocate space in the work vector for the (dense) objective gradient
@@ -128,8 +138,74 @@ namespace casadi {
 
   }
 
+  extern "C" {
+
+    static struct MyData {
+      const void* object;
+      void* mem;
+    } userdata;
+
+    int constraints(const real_t* x, real_t* out) {
+      uout() << "constraints " << &userdata << std::endl;
+      auto m = static_cast<PanocMemory*>(userdata.mem);
+      auto o = static_cast<const Panoc*>(userdata.object);
+
+      // Set x,p inputs
+      m->arg[0] = x;
+      m->arg[1] = m->p;
+
+      // Set g outputs
+      m->res[0] = out;
+
+      // Compute
+      o->calc_function(m, "nlp_g");
+      return SUCCESS;
+    }
+
+    static int constraints_forward_diff(const real_t* x,const real_t* y,real_t* out){
+      uout() << "constraints diff" << &userdata << std::endl;
+
+      auto m = static_cast<PanocMemory*>(userdata.mem);
+      auto o = static_cast<const Panoc*>(userdata.object);
+
+      // Set x,p inputs
+      m->arg[0] = x;
+      m->arg[1] = m->p;
+      m->arg[2] = y; 
+
+      // Set g outputs
+      m->res[0] = out;
+
+      // Compute
+      o->calc_function(m, "nlp_fwd_g");
+
+      return SUCCESS;
+    }
+
+    double cost_gradient(const double* input, double* gradient){
+      uout() << "cost gradient " << &userdata << std::endl;
+      auto m = static_cast<PanocMemory*>(userdata.mem);
+      auto o = static_cast<const Panoc*>(userdata.object);
+      double cost;
+
+      m->arg[0] = input;
+      m->arg[1] = m->p;
+
+      m->res[0] = &cost; 
+      m->res[1] = gradient;
+
+      o->calc_function(m, "nlp_jac_fg");
+
+      return cost;
+    }
+
+  }
+
   int Panoc::solve(void* mem) const {
     auto m = static_cast<PanocMemory*>(mem);
+
+    userdata.object = this;
+    userdata.mem = mem; 
 
     uout() << "Solve"  << std::endl;
 
@@ -142,32 +218,38 @@ namespace casadi {
     uout() << "Parameter values:" <<
       std::vector<double>(m->p, m->p+np_) << std::endl;
 
+    struct optimizer_extended_problem extended_problem;
+    extended_problem.problem.cost_gradient_function=cost_gradient;
+    extended_problem.problem.dimension=nx_;
 
-    // Set x,p inputs
+    extended_problem.lower_bounds_constraints=m->lbg;
+    extended_problem.upper_bounds_constraints=m->ubg;
+    extended_problem.constraints=constraints;
+    extended_problem.number_of_constraints=ng_;
+    extended_problem.constraints_forwad_diff=constraints_forward_diff;
+    
+    extended_problem.max_loops=outer_iterations_;
+    extended_problem.problem.solver_params.tolerance=tolerance_;
+    extended_problem.problem.solver_params.buffer_size=buffer_size_;
+    extended_problem.problem.solver_params.max_interations=inner_iterations_;
+
+    uout() << &userdata << std::endl;
+
+    for(int i=0; i<1; i++){
+     optimizer_init_extended_box(&extended_problem,m->lbx[i],m->ubx[i],constraints_weight_);
+    }
+
+    uout() << &userdata << std::endl;
+    m->iter_count = solve_extended_problem(m->x);
+
+
+
     m->arg[0] = m->x;
     m->arg[1] = m->p;
 
-    // Set f, grad:f:x, g, jac:g:x outputs
     m->res[0] = &m->f;
-    m->res[1] = m->gf;
-    m->res[2] = m->g;
+    calc_function(m, "nlp_f");
 
-    // Compute
-    calc_function(m, "nlp_jac_fg");
-
-    uout() << "Objective gradient (always dense): " <<
-      std::vector<double>(m->gf, m->gf+nx_) << std::endl;
-
-    // This is not an actual solver.
-    // Let's just output some nonsense answer
-    for (int i=0;i<nx_;++i)
-      m->x[i]= 666+2*i;
-
-    std::fill(m->lam_g, m->lam_g+ng_, 2.5);
-    std::fill(m->lam_x, m->lam_x+nx_, 3.5);
-
-    // Invent some statistics
-    m->iter_count = 42;
 
     return 0;
   }

@@ -29,8 +29,6 @@
 #include "casadi/core/nlpsol_impl.hpp"
 #include <casadi/interfaces/panoc/casadi_nlpsol_panoc_export.h>
 
-#include <optimizer.h>
-
 /** \defgroup plugin_Nlpsol_panoc
    Panoc NLP solver, just for showing how to right your own CasADi NLP solver
 */
@@ -48,8 +46,6 @@ namespace casadi {
 
     // Statistics
     int iter_count;
-
-    optimizer_extended_problem problem;
 
   };
 
@@ -102,7 +98,9 @@ namespace casadi {
     int outer_iterations_;
     int inner_iterations_;
     double tolerance_;
-    double constraints_weight_;
+    //std::vector<double> constraints_weight_;
+    double constraints_weight_; 
+    int buffer_size_;
 
     // Variables that are not changed during solve()
     Sparsity J_;
